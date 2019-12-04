@@ -112,6 +112,11 @@ resources:
   returned: always
   type: complex
   contains:
+    id:
+      description:
+      - The unique identifier for the resource.
+      returned: success
+      type: int
     creationTimestamp:
       description:
       - Creation timestamp in RFC3339 text format.
@@ -122,11 +127,6 @@ resources:
       - An optional description of this resource.
       returned: success
       type: str
-    id:
-      description:
-      - The unique identifier for the resource.
-      returned: success
-      type: int
     name:
       description:
       - Name of the resource. Provided by the client when the resource is created.
