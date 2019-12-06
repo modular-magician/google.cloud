@@ -397,11 +397,14 @@ def ip_cidr_range_update(module, request, response):
 
 def fingerprint_update(module, request, response):
     auth = GcpSession(module, 'compute')
+    new_resource = fetch_resource(module, self_link(module), kind)
+    fingerprint = new_resource[:fingerprint]
     auth.patch(
         ''.join(["https://www.googleapis.com/compute/v1/", "projects/{project}/regions/{region}/subnetworks/{name}"]).format(**module.params),
         {
             u'fingerprint': response.get('fingerprint'),
             u'secondaryIpRanges': SubnetworkSecondaryiprangesArray(module.params.get('secondary_ip_ranges', []), module).to_request(),
+            'fingerprint': 'new_resource[:fingerprint]',
         },
     )
 
