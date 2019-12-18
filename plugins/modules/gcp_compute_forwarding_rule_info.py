@@ -241,6 +241,23 @@ resources:
       - The forwarded traffic must be of a type appropriate to the target object.
       returned: success
       type: dict
+    allowGlobalAccess:
+      description:
+      - If true, clients can access ILB from all regions.
+      - Otherwise only allows from the local region the ILB is located at.
+      returned: success
+      type: bool
+    labels:
+      description:
+      - Labels to apply to this forwarding rule. A list of key->value pairs.
+      returned: success
+      type: dict
+    labelFingerprint:
+      description:
+      - The fingerprint used for optimistic locking of this resource. Used internally
+        during updates.
+      returned: success
+      type: str
     allPorts:
       description:
       - For internal TCP/UDP load balancing (i.e. load balancing scheme is INTERNAL
