@@ -193,19 +193,6 @@ resources:
         firewall rule will be enabled.
       returned: success
       type: bool
-    logConfig:
-      description:
-      - This field denotes whether to enable logging for a particular firewall rule.
-        If logging is enabled, logs will be exported to Stackdriver.
-      returned: success
-      type: complex
-      contains:
-        enableLogging:
-          description:
-          - This field denotes whether to enable logging for a particular firewall
-            rule. If logging is enabled, logs will be exported to Stackdriver.
-          returned: success
-          type: bool
     id:
       description:
       - The unique identifier for the resource.
@@ -294,6 +281,19 @@ resources:
         on the specified network.
       returned: success
       type: list
+    logConfig:
+      description:
+      - This field denotes whether to enable logging for a particular firewall rule.
+        If logging is enabled, logs will be exported to Stackdriver.
+      returned: success
+      type: complex
+      contains:
+        enableLogging:
+          description:
+          - This field denotes whether to enable logging for a particular firewall
+            rule. If logging is enabled, logs will be exported to Stackdriver.
+          returned: success
+          type: bool
 '''
 
 ################################################################################

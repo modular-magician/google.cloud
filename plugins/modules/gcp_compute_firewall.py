@@ -136,20 +136,6 @@ options:
     required: false
     type: bool
     version_added: '2.8'
-  log_config:
-    description:
-    - This field denotes whether to enable logging for a particular firewall rule.
-      If logging is enabled, logs will be exported to Stackdriver.
-    required: false
-    type: dict
-    version_added: '2.10'
-    suboptions:
-      enable_logging:
-        description:
-        - This field denotes whether to enable logging for a particular firewall rule.
-          If logging is enabled, logs will be exported to Stackdriver.
-        required: false
-        type: bool
   name:
     description:
     - Name of the resource. Provided by the client when the resource is created. The
@@ -243,6 +229,20 @@ options:
       the specified network.
     required: false
     type: list
+  log_config:
+    description:
+    - This field denotes whether to enable logging for a particular firewall rule.
+      If logging is enabled, logs will be exported to Stackdriver.
+    required: false
+    type: dict
+    version_added: '2.10'
+    suboptions:
+      enable_logging:
+        description:
+        - This field denotes whether to enable logging for a particular firewall rule.
+          If logging is enabled, logs will be exported to Stackdriver.
+        required: false
+        type: bool
   project:
     description:
     - The Google Cloud Platform project to use.
@@ -394,19 +394,6 @@ disabled:
     rule will be enabled.
   returned: success
   type: bool
-logConfig:
-  description:
-  - This field denotes whether to enable logging for a particular firewall rule. If
-    logging is enabled, logs will be exported to Stackdriver.
-  returned: success
-  type: complex
-  contains:
-    enableLogging:
-      description:
-      - This field denotes whether to enable logging for a particular firewall rule.
-        If logging is enabled, logs will be exported to Stackdriver.
-      returned: success
-      type: bool
 id:
   description:
   - The unique identifier for the resource.
@@ -494,6 +481,19 @@ targetTags:
     the specified network.
   returned: success
   type: list
+logConfig:
+  description:
+  - This field denotes whether to enable logging for a particular firewall rule. If
+    logging is enabled, logs will be exported to Stackdriver.
+  returned: success
+  type: complex
+  contains:
+    enableLogging:
+      description:
+      - This field denotes whether to enable logging for a particular firewall rule.
+        If logging is enabled, logs will be exported to Stackdriver.
+      returned: success
+      type: bool
 '''
 
 ################################################################################
@@ -529,7 +529,6 @@ def main():
             destination_ranges=dict(type='list', elements='str'),
             direction=dict(type='str'),
             disabled=dict(type='bool'),
-            log_config=dict(type='dict', options=dict(enable_logging=dict(type='bool'))),
             name=dict(required=True, type='str'),
             network=dict(default=dict(selfLink='global/networks/default'), type='dict'),
             priority=dict(default=1000, type='int'),
@@ -538,6 +537,7 @@ def main():
             source_tags=dict(type='list', elements='str'),
             target_service_accounts=dict(type='list', elements='str'),
             target_tags=dict(type='list', elements='str'),
+            log_config=dict(type='dict', options=dict(enable_logging=dict(type='bool'))),
         ),
         mutually_exclusive=[
             ['allowed', 'denied'],
@@ -605,7 +605,6 @@ def resource_to_request(module):
         u'destinationRanges': module.params.get('destination_ranges'),
         u'direction': module.params.get('direction'),
         u'disabled': module.params.get('disabled'),
-        u'logConfig': FirewallLogconfig(module.params.get('log_config', {}), module).to_request(),
         u'name': module.params.get('name'),
         u'network': replace_resource_dict(module.params.get(u'network', {}), 'selfLink'),
         u'priority': module.params.get('priority'),
@@ -614,6 +613,7 @@ def resource_to_request(module):
         u'sourceTags': module.params.get('source_tags'),
         u'targetServiceAccounts': module.params.get('target_service_accounts'),
         u'targetTags': module.params.get('target_tags'),
+        u'logConfig': FirewallLogconfig(module.params.get('log_config', {}), module).to_request(),
     }
     request = encode_request(request, module)
     return_vals = {}
@@ -687,7 +687,6 @@ def response_to_hash(module, response):
         u'destinationRanges': response.get(u'destinationRanges'),
         u'direction': response.get(u'direction'),
         u'disabled': response.get(u'disabled'),
-        u'logConfig': FirewallLogconfig(response.get(u'logConfig', {}), module).from_response(),
         u'id': response.get(u'id'),
         u'name': module.params.get('name'),
         u'network': response.get(u'network'),
@@ -697,6 +696,7 @@ def response_to_hash(module, response):
         u'sourceTags': response.get(u'sourceTags'),
         u'targetServiceAccounts': response.get(u'targetServiceAccounts'),
         u'targetTags': response.get(u'targetTags'),
+        u'logConfig': FirewallLogconfig(response.get(u'logConfig', {}), module).from_response(),
     }
 
 
@@ -808,10 +808,10 @@ class FirewallLogconfig(object):
             self.request = {}
 
     def to_request(self):
-        return remove_nones_from_dict({u'enableLogging': self.request.get('enable_logging')})
+        return remove_nones_from_dict({u'enable': self.request.get('enable_logging')})
 
     def from_response(self):
-        return remove_nones_from_dict({u'enableLogging': self.request.get(u'enableLogging')})
+        return remove_nones_from_dict({u'enable': self.request.get(u'enable')})
 
 
 if __name__ == '__main__':
