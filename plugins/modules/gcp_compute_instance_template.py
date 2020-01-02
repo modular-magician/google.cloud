@@ -93,6 +93,12 @@ options:
         required: false
         type: list
         suboptions:
+          licenses:
+            description:
+            - Any applicable license URI.
+            required: false
+            type: list
+            version_added: '2.10'
           auto_delete:
             description:
             - Specifies whether the disk will be auto-deleted when the instance is
@@ -600,6 +606,11 @@ properties:
       returned: success
       type: complex
       contains:
+        licenses:
+          description:
+          - Any applicable license URI.
+          returned: success
+          type: list
         autoDelete:
           description:
           - Specifies whether the disk will be auto-deleted when the instance is deleted
@@ -1002,6 +1013,7 @@ def main():
                         type='list',
                         elements='dict',
                         options=dict(
+                            licenses=dict(type='list', elements='str'),
                             auto_delete=dict(type='bool'),
                             boot=dict(type='bool'),
                             device_name=dict(type='str'),
@@ -1358,6 +1370,7 @@ class InstanceTemplateDisksArray(object):
     def _request_for_item(self, item):
         return remove_nones_from_dict(
             {
+                u'licenses': item.get('licenses'),
                 u'autoDelete': item.get('auto_delete'),
                 u'boot': item.get('boot'),
                 u'deviceName': item.get('device_name'),
@@ -1374,6 +1387,7 @@ class InstanceTemplateDisksArray(object):
     def _response_from_item(self, item):
         return remove_nones_from_dict(
             {
+                u'licenses': item.get(u'licenses'),
                 u'autoDelete': item.get(u'autoDelete'),
                 u'boot': item.get(u'boot'),
                 u'deviceName': item.get(u'deviceName'),
