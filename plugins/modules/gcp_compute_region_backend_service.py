@@ -71,6 +71,7 @@ options:
         - A setting of 0 means the group is completely drained, offering 0% of its
           available Capacity. Valid range is [0.0,1.0].
         required: false
+        default: '1.0'
         type: str
       description:
         description:
@@ -518,7 +519,7 @@ def main():
                 elements='dict',
                 options=dict(
                     balancing_mode=dict(default='CONNECTION', type='str'),
-                    capacity_scaler=dict(type='str'),
+                    capacity_scaler=dict(default=1.0, type='str'),
                     description=dict(type='str'),
                     group=dict(required=True, type='str'),
                     max_connections=dict(type='int'),
