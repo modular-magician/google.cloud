@@ -75,20 +75,6 @@ options:
     required: false
     default: Etc/UTC
     type: str
-  attempt_deadline:
-    description:
-    - The deadline for job attempts. If the request handler does not respond by this
-      deadline then the request is cancelled and the attempt is marked as a DEADLINE_EXCEEDED
-      failure. The failed attempt can be viewed in execution logs. Cloud Scheduler
-      will retry the job according to the RetryConfig.
-    - 'The allowed duration for this deadline is: * For HTTP targets, between 15 seconds
-      and 30 minutes.'
-    - "* For App Engine HTTP targets, between 15 seconds and 24 hours."
-    - 'A duration in seconds with up to nine fractional digits, terminated by ''s''.
-      Example: "3.5s" .'
-    required: false
-    default: 180s
-    type: str
   retry_config:
     description:
     - By default, if a job does not complete successfully, meaning that an acknowledgement
@@ -353,7 +339,6 @@ EXAMPLES = '''
     schedule: "*/4 * * * *"
     description: test app engine job
     time_zone: Europe/London
-    attempt_deadline: 320s
     app_engine_http_target:
       http_method: POST
       app_engine_routing:
@@ -388,19 +373,6 @@ timeZone:
   description:
   - Specifies the time zone to be used in interpreting schedule.
   - The value of this field must be a time zone name from the tz database.
-  returned: success
-  type: str
-attemptDeadline:
-  description:
-  - The deadline for job attempts. If the request handler does not respond by this
-    deadline then the request is cancelled and the attempt is marked as a DEADLINE_EXCEEDED
-    failure. The failed attempt can be viewed in execution logs. Cloud Scheduler will
-    retry the job according to the RetryConfig.
-  - 'The allowed duration for this deadline is: * For HTTP targets, between 15 seconds
-    and 30 minutes.'
-  - "* For App Engine HTTP targets, between 15 seconds and 24 hours."
-  - 'A duration in seconds with up to nine fractional digits, terminated by ''s''.
-    Example: "3.5s" .'
   returned: success
   type: str
 retryConfig:
@@ -636,7 +608,6 @@ def main():
             description=dict(type='str'),
             schedule=dict(type='str'),
             time_zone=dict(default='Etc/UTC', type='str'),
-            attempt_deadline=dict(default='180s', type='str'),
             retry_config=dict(
                 type='dict',
                 options=dict(
@@ -724,7 +695,6 @@ def resource_to_request(module):
         u'description': module.params.get('description'),
         u'schedule': module.params.get('schedule'),
         u'timeZone': module.params.get('time_zone'),
-        u'attemptDeadline': module.params.get('attempt_deadline'),
         u'retryConfig': JobRetryconfig(module.params.get('retry_config', {}), module).to_request(),
         u'pubsubTarget': JobPubsubtarget(module.params.get('pubsub_target', {}), module).to_request(),
         u'appEngineHttpTarget': JobAppenginehttptarget(module.params.get('app_engine_http_target', {}), module).to_request(),
@@ -802,7 +772,6 @@ def response_to_hash(module, response):
         u'description': module.params.get('description'),
         u'schedule': module.params.get('schedule'),
         u'timeZone': module.params.get('time_zone'),
-        u'attemptDeadline': module.params.get('attempt_deadline'),
         u'retryConfig': JobRetryconfig(module.params.get('retry_config', {}), module).to_request(),
         u'pubsubTarget': JobPubsubtarget(module.params.get('pubsub_target', {}), module).to_request(),
         u'appEngineHttpTarget': JobAppenginehttptarget(module.params.get('app_engine_http_target', {}), module).to_request(),
