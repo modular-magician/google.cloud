@@ -104,6 +104,9 @@ options:
     - An array of configurations for secondary IP ranges for VM instances contained
       in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange
       of the subnetwork. The alias IPs may belong to either primary or secondary ranges.
+    - "**Note**: This field will default to the API if empty. In order to explicitly
+      remove any secondary IP ranges, set this to an empty array. For example: `secondary_ip_range=[]`
+      ."
     required: false
     type: list
     version_added: '2.8'
@@ -262,6 +265,9 @@ secondaryIpRanges:
   - An array of configurations for secondary IP ranges for VM instances contained
     in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange
     of the subnetwork. The alias IPs may belong to either primary or secondary ranges.
+  - "**Note**: This field will default to the API if empty. In order to explicitly
+    remove any secondary IP ranges, set this to an empty array. For example: `secondary_ip_range=[]`
+    ."
   returned: success
   type: complex
   contains:
