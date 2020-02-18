@@ -132,6 +132,7 @@ options:
         description:
         - Defines the CPU utilization policy that allows the autoscaler to scale based
           on the average CPU utilization of a managed instance group.
+        elements: dict
         required: false
         type: list
         aliases:
