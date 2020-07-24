@@ -219,7 +219,7 @@ resources:
         maxUtilization:
           description:
           - Used when balancingMode is UTILIZATION. This ratio defines the CPU utilization
-            target for the group. The default is 0.8. Valid range is [0.0, 1.0].
+            target for the group. Valid range is [0.0, 1.0].
           returned: success
           type: str
     circuitBreakers:
@@ -426,8 +426,10 @@ resources:
     healthChecks:
       description:
       - The set of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health
-        checking this BackendService. Currently at most one health check can be specified,
-        and a health check is required.
+        checking this BackendService.
+      - Unless the backend of this service is a NetworkEndpointGroup, a health check
+        is required.
+      - Currently at most one health check can be specified.
       - For internal load balancing, a URL to a HealthCheck resource must be specified
         instead.
       returned: success

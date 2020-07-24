@@ -163,9 +163,8 @@ options:
       max_utilization:
         description:
         - Used when balancingMode is UTILIZATION. This ratio defines the CPU utilization
-          target for the group. The default is 0.8. Valid range is [0.0, 1.0].
+          target for the group. Valid range is [0.0, 1.0].
         required: false
-        default: '0.8'
         type: str
   circuit_breakers:
     description:
@@ -372,12 +371,14 @@ options:
   health_checks:
     description:
     - The set of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health
-      checking this BackendService. Currently at most one health check can be specified,
-      and a health check is required.
+      checking this BackendService.
+    - Unless the backend of this service is a NetworkEndpointGroup, a health check
+      is required.
+    - Currently at most one health check can be specified.
     - For internal load balancing, a URL to a HealthCheck resource must be specified
       instead.
     elements: str
-    required: true
+    required: false
     type: list
   iap:
     description:
@@ -826,7 +827,7 @@ backends:
     maxUtilization:
       description:
       - Used when balancingMode is UTILIZATION. This ratio defines the CPU utilization
-        target for the group. The default is 0.8. Valid range is [0.0, 1.0].
+        target for the group. Valid range is [0.0, 1.0].
       returned: success
       type: str
 circuitBreakers:
@@ -1030,8 +1031,10 @@ enableCDN:
 healthChecks:
   description:
   - The set of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health
-    checking this BackendService. Currently at most one health check can be specified,
-    and a health check is required.
+    checking this BackendService.
+  - Unless the backend of this service is a NetworkEndpointGroup, a health check is
+    required.
+  - Currently at most one health check can be specified.
   - For internal load balancing, a URL to a HealthCheck resource must be specified
     instead.
   returned: success
@@ -1317,7 +1320,7 @@ def main():
                     max_rate=dict(type='int'),
                     max_rate_per_instance=dict(type='str'),
                     max_rate_per_endpoint=dict(type='str'),
-                    max_utilization=dict(default=0.8, type='str'),
+                    max_utilization=dict(type='str'),
                 ),
             ),
             circuit_breakers=dict(
@@ -1365,7 +1368,7 @@ def main():
             custom_request_headers=dict(type='list', elements='str'),
             description=dict(type='str'),
             enable_cdn=dict(type='bool'),
-            health_checks=dict(required=True, type='list', elements='str'),
+            health_checks=dict(type='list', elements='str'),
             iap=dict(
                 type='dict',
                 options=dict(enabled=dict(type='bool'), oauth2_client_id=dict(required=True, type='str'), oauth2_client_secret=dict(required=True, type='str')),
