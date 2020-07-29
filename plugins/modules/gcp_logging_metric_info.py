@@ -134,7 +134,7 @@ resources:
         unit:
           description:
           - The unit in which the metric value is reported. It is only applicable
-            if the valueType is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The supported
+            if the valueType is 'INT64', 'DOUBLE', or 'DISTRIBUTION'. The supported
             units are a subset of [The Unified Code for Units of Measure](U(http://unitsofmeasure.org/ucum.html))
             standard .
           returned: success
@@ -189,8 +189,8 @@ resources:
         type:
           description:
           - The metric type, including its DNS name prefix. The type is not URL-encoded.
-          - All user-defined metric types have the DNS name `custom.googleapis.com`
-            or `external.googleapis.com`.
+          - All user-defined metric types have the DNS name 'custom.googleapis.com'
+            or 'external.googleapis.com'.
           returned: success
           type: str
     labelExtractors:

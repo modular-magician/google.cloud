@@ -27,7 +27,8 @@ __metaclass__ = type
 
 ANSIBLE_METADATA = {'metadata_version': '1.1', 'status': ["preview"], 'supported_by': 'community'}
 
-DOCUMENTATION = '''
+DOCUMENTATION = (
+    '''
 ---
 module: gcp_kms_crypto_key_info
 description:
@@ -43,7 +44,9 @@ options:
   key_ring:
     description:
     - The KeyRing that this key belongs to.
-    - 'Format: `''projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}''`.'
+    - 'Format: '''
+    'projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}'
+    '''.'
     required: true
     type: str
   project:
@@ -95,6 +98,7 @@ notes:
 - Environment variables values will only be used if the playbook values are not set.
 - The I(service_account_email) and I(service_account_file) options are mutually exclusive.
 '''
+)
 
 EXAMPLES = '''
 - name: get info on a crypto key
@@ -105,7 +109,8 @@ EXAMPLES = '''
     service_account_file: "/tmp/auth.pem"
 '''
 
-RETURN = '''
+RETURN = (
+    '''
 resources:
   description: List of resources
   returned: always
@@ -139,7 +144,7 @@ resources:
         as the primary.
       - The first rotation will take place after the specified period. The rotation
         period has the format of a decimal number with up to 9 fractional digits,
-        followed by the letter `s` (seconds). It must be greater than a day (ie, 86400).
+        followed by the letter 's' (seconds). It must be greater than a day (ie, 86400).
       returned: success
       type: str
     versionTemplate:
@@ -168,10 +173,13 @@ resources:
     keyRing:
       description:
       - The KeyRing that this key belongs to.
-      - 'Format: `''projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}''`.'
+      - 'Format: '''
+    'projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}'
+    '''.'
       returned: success
       type: str
 '''
+)
 
 ################################################################################
 # Imports

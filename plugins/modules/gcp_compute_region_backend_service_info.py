@@ -173,7 +173,7 @@ resources:
             zone as the Network Endpoint Group.
           - Backend services cannot mix Instance Group and Network Endpoint Group
             backends.
-          - When the `load_balancing_scheme` is INTERNAL, only instance groups are
+          - When the 'load_balancing_scheme' is INTERNAL, only instance groups are
             supported.
           - Note that you must specify an Instance Group or Network Endpoint Group
             resource using the fully-qualified URL, rather than a partial URL.
@@ -242,8 +242,8 @@ resources:
     circuitBreakers:
       description:
       - Settings controlling the volume of connections to a backend service. This
-        field is applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED
-        and the `protocol` is set to HTTP, HTTPS, or HTTP2.
+        field is applicable only when the 'load_balancing_scheme' is set to INTERNAL_MANAGED
+        and the 'protocol' is set to HTTP, HTTPS, or HTTP2.
       returned: success
       type: complex
       contains:
@@ -286,9 +286,9 @@ resources:
         is applicable only for HTTP connections. The affinity to a particular destination
         host will be lost when one or more hosts are added/removed from the destination
         service. This field specifies parameters that control consistent hashing.
-      - This field only applies when all of the following are true - * `load_balancing_scheme`
-        is set to INTERNAL_MANAGED * `protocol` is set to HTTP, HTTPS, or HTTP2 *
-        `locality_lb_policy` is set to MAGLEV or RING_HASH .
+      - This field only applies when all of the following are true - * 'load_balancing_scheme'
+        is set to INTERNAL_MANAGED * 'protocol' is set to HTTP, HTTPS, or HTTP2 *
+        'locality_lb_policy' is set to MAGLEV or RING_HASH .
       returned: success
       type: complex
       contains:
@@ -449,15 +449,15 @@ resources:
       - MAGLEV - used as a drop in replacement for the ring hash load balancer.
       - Maglev is not as stable as ring hash but has faster table lookup build times
         and host selection times. For more information about Maglev, refer to https://ai.google/research/pubs/pub44824
-        This field is applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED
-        and the `protocol` is set to HTTP, HTTPS, or HTTP2.
+        This field is applicable only when the 'load_balancing_scheme' is set to INTERNAL_MANAGED
+        and the 'protocol' is set to HTTP, HTTPS, or HTTP2.
       returned: success
       type: str
     name:
       description:
       - Name of the resource. Provided by the client when the resource is created.
         The name must be 1-63 characters long, and comply with RFC1035. Specifically,
-        the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+        the name must be 1-63 characters long and match the regular expression '[a-z]([-a-z0-9]*[a-z0-9])?'
         which means the first character must be a lowercase letter, and all following
         characters must be a dash, lowercase letter, or digit, except the last character,
         which cannot be a dash.
@@ -466,8 +466,8 @@ resources:
     outlierDetection:
       description:
       - Settings controlling eviction of unhealthy hosts from the load balancing pool.
-      - This field is applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED
-        and the `protocol` is set to HTTP, HTTPS, or HTTP2.
+      - This field is applicable only when the 'load_balancing_scheme' is set to INTERNAL_MANAGED
+        and the 'protocol' is set to HTTP, HTTPS, or HTTP2.
       returned: success
       type: complex
       contains:
@@ -488,8 +488,8 @@ resources:
             nanos:
               description:
               - Span of time that's a fraction of a second at nanosecond resolution.
-                Durations less than one second are represented with a 0 `seconds`
-                field and a positive `nanos` field. Must be from 0 to 999,999,999
+                Durations less than one second are represented with a 0 'seconds'
+                field and a positive 'nanos' field. Must be from 0 to 999,999,999
                 inclusive.
               returned: success
               type: int
@@ -546,8 +546,8 @@ resources:
             nanos:
               description:
               - Span of time that's a fraction of a second at nanosecond resolution.
-                Durations less than one second are represented with a 0 `seconds`
-                field and a positive `nanos` field. Must be from 0 to 999,999,999
+                Durations less than one second are represented with a 0 'seconds'
+                field and a positive 'nanos' field. Must be from 0 to 999,999,999
                 inclusive.
               returned: success
               type: int

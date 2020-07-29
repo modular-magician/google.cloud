@@ -113,7 +113,7 @@ resources:
     name:
       description:
       - A user-defined name of the function. Function names must be unique globally
-        and match pattern `projects/*/locations/*/functions/*`.
+        and match pattern 'projects/*/locations/*/functions/*'.
       returned: success
       type: str
     description:
@@ -227,13 +227,13 @@ resources:
       contains:
         eventType:
           description:
-          - 'The type of event to observe. For example: `providers/cloud.storage/eventTypes/object.change`
-            and `providers/cloud.pubsub/eventTypes/topic.publish`.'
+          - 'The type of event to observe. For example: ''providers/cloud.storage/eventTypes/object.change''
+            and ''providers/cloud.pubsub/eventTypes/topic.publish''.'
           returned: success
           type: str
         resource:
           description:
-          - The resource(s) from which to observe events, for example, `projects/_/buckets/myBucket.`
+          - The resource(s) from which to observe events, for example, 'projects/_/buckets/myBucket.'
             .
           returned: success
           type: str

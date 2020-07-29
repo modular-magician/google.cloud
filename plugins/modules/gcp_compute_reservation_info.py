@@ -137,7 +137,7 @@ resources:
       description:
       - Name of the resource. Provided by the client when the resource is created.
         The name must be 1-63 characters long, and comply with RFC1035. Specifically,
-        the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+        the name must be 1-63 characters long and match the regular expression '[a-z]([-a-z0-9]*[a-z0-9])?'
         which means the first character must be a lowercase letter, and all following
         characters must be a dash, lowercase letter, or digit, except the last character,
         which cannot be a dash.
@@ -190,8 +190,8 @@ resources:
               type: str
             minCpuPlatform:
               description:
-              - The minimum CPU platform for the reservation. For example, `"Intel
-                Skylake"`. See U(https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform#availablezones)
+              - The minimum CPU platform for the reservation. For example, '"Intel
+                Skylake"'. See U(https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform#availablezones)
                 for information on available CPU platforms.
               returned: success
               type: str
@@ -204,7 +204,7 @@ resources:
                 acceleratorType:
                   description:
                   - 'The full or partial URL of the accelerator type to attach to
-                    this instance. For example: `projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100`
+                    this instance. For example: ''projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100''
                     If you are creating an instance template, specify only the accelerator
                     name.'
                   returned: success
@@ -217,7 +217,7 @@ resources:
             localSsds:
               description:
               - The amount of local ssd to reserve with each instance. This reserves
-                disks of type `local-ssd`.
+                disks of type 'local-ssd'.
               returned: success
               type: complex
               contains:

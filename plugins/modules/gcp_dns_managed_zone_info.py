@@ -135,7 +135,7 @@ resources:
           description:
           - Specifies the mechanism used to provide authenticated denial-of-existence
             responses.
-          - non_existence can only be updated when the state is `off`.
+          - non_existence can only be updated when the state is 'off'.
           returned: success
           type: str
         state:
@@ -148,7 +148,7 @@ resources:
           - Specifies parameters that will be used for generating initial DnsKeys
             for this ManagedZone. If you provide a spec for keySigning or zoneSigning,
             you must also provide one for the other.
-          - default_key_specs can only be updated when the state is `off`.
+          - default_key_specs can only be updated when the state is 'off'.
           returned: success
           type: complex
           contains:
@@ -233,7 +233,7 @@ resources:
             networkUrl:
               description:
               - The fully qualified URL of the VPC network to bind to.
-              - This should be formatted like `U(https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`)
+              - This should be formatted like 'U(https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}')
                 .
               returned: success
               type: str
@@ -259,10 +259,10 @@ resources:
               type: str
             forwardingPath:
               description:
-              - Forwarding path for this TargetNameServer. If unset or `default` Cloud
+              - Forwarding path for this TargetNameServer. If unset or 'default' Cloud
                 DNS will make forwarding decision based on address ranges, i.e. RFC1918
                 addresses go to the VPC, Non-RFC1918 addresses go to the Internet.
-                When set to `private`, Cloud DNS will always send queries through
+                When set to 'private', Cloud DNS will always send queries through
                 VPC for this target .
               returned: success
               type: str
@@ -282,7 +282,7 @@ resources:
             networkUrl:
               description:
               - The fully qualified URL of the VPC network to forward queries to.
-              - This should be formatted like `U(https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`)
+              - This should be formatted like 'U(https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}')
                 .
               returned: success
               type: str

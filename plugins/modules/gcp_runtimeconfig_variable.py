@@ -50,12 +50,12 @@ options:
     type: str
   value:
     description:
-    - The binary value of the variable. Either this or `text` can be set.
+    - The binary value of the variable. Either this or 'text' can be set.
     required: false
     type: str
   text:
     description:
-    - The string value of the variable. Either this or `value` can be set.
+    - The string value of the variable. Either this or 'value' can be set.
     required: false
     type: str
   name:
@@ -132,12 +132,12 @@ EXAMPLES = '''
 RETURN = '''
 value:
   description:
-  - The binary value of the variable. Either this or `text` can be set.
+  - The binary value of the variable. Either this or 'text' can be set.
   returned: success
   type: str
 text:
   description:
-  - The string value of the variable. Either this or `value` can be set.
+  - The string value of the variable. Either this or 'value' can be set.
   returned: success
   type: str
 name:

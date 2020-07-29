@@ -57,7 +57,7 @@ options:
     description:
     - Name of the resource. Provided by the client when the resource is created. The
       name must be 1-63 characters long, and comply with RFC1035. Specifically, the
-      name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+      name must be 1-63 characters long and match the regular expression '[a-z]([-a-z0-9]*[a-z0-9])?'
       which means the first character must be a lowercase letter, and all following
       characters must be a dash, lowercase letter, or digit, except the last character,
       which cannot be a dash.
@@ -80,8 +80,8 @@ options:
       id:
         description:
         - The numberic ID for this interface. Allowed values are based on the redundancy
-          type of this external VPN gateway * `0 - SINGLE_IP_INTERNALLY_REDUNDANT`
-          * `0, 1 - TWO_IPS_REDUNDANCY` * `0, 1, 2, 3 - FOUR_IPS_REDUNDANCY` .
+          type of this external VPN gateway * '0 - SINGLE_IP_INTERNALLY_REDUNDANT'
+          * '0, 1 - TWO_IPS_REDUNDANCY' * '0, 1, 2, 3 - FOUR_IPS_REDUNDANCY' .
         required: false
         type: int
       ip_address:
@@ -168,7 +168,7 @@ name:
   description:
   - Name of the resource. Provided by the client when the resource is created. The
     name must be 1-63 characters long, and comply with RFC1035. Specifically, the
-    name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+    name must be 1-63 characters long and match the regular expression '[a-z]([-a-z0-9]*[a-z0-9])?'
     which means the first character must be a lowercase letter, and all following
     characters must be a dash, lowercase letter, or digit, except the last character,
     which cannot be a dash.
@@ -188,8 +188,8 @@ interfaces:
     id:
       description:
       - The numberic ID for this interface. Allowed values are based on the redundancy
-        type of this external VPN gateway * `0 - SINGLE_IP_INTERNALLY_REDUNDANT` *
-        `0, 1 - TWO_IPS_REDUNDANCY` * `0, 1, 2, 3 - FOUR_IPS_REDUNDANCY` .
+        type of this external VPN gateway * '0 - SINGLE_IP_INTERNALLY_REDUNDANT' *
+        '0, 1 - TWO_IPS_REDUNDANCY' * '0, 1, 2, 3 - FOUR_IPS_REDUNDANCY' .
       returned: success
       type: int
     ipAddress:

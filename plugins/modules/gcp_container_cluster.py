@@ -997,7 +997,7 @@ enableTpu:
 tpuIpv4CidrBlock:
   description:
   - The IP address range of the Cloud TPUs in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
-    notation (e.g. `1.2.3.4/29`).
+    notation (e.g. '1.2.3.4/29').
   returned: success
   type: str
 addonsConfig:
@@ -1718,7 +1718,7 @@ class Kubectl(object):
         return {
             'apiVersion': 'v1',
             'clusters': [
-                {'name': context, 'cluster': {'certificate-authority-data': str(self.fetch['masterAuth']['clusterCaCertificate']), 'server': endpoint,}}
+                {'name': context, 'cluster': {'certificate-authority-data': str(self.fetch['masterAuth']['clusterCaCertificate']), 'server': endpoint}}
             ],
             'contexts': [{'name': context, 'context': {'cluster': context, 'user': context}}],
             'current-context': context,

@@ -143,7 +143,7 @@ options:
         description:
         - 'The full resource name for the Cloud Pub/Sub topic to which messages will
           be published when a job is delivered. ~>**NOTE**: The topic name must be
-          in the same format as required by PubSub''s PublishRequest.name, e.g. `projects/my-project/topics/my-topic`.'
+          in the same format as required by PubSub''s PublishRequest.name, e.g. ''projects/my-project/topics/my-topic''.'
         required: true
         type: str
       data:
@@ -457,7 +457,7 @@ pubsubTarget:
       description:
       - 'The full resource name for the Cloud Pub/Sub topic to which messages will
         be published when a job is delivered. ~>**NOTE**: The topic name must be in
-        the same format as required by PubSub''s PublishRequest.name, e.g. `projects/my-project/topics/my-topic`.'
+        the same format as required by PubSub''s PublishRequest.name, e.g. ''projects/my-project/topics/my-topic''.'
       returned: success
       type: str
     data:

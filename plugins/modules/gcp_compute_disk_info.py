@@ -164,7 +164,7 @@ resources:
       description:
       - Name of the resource. Provided by the client when the resource is created.
         The name must be 1-63 characters long, and comply with RFC1035. Specifically,
-        the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+        the name must be 1-63 characters long and match the regular expression '[a-z]([-a-z0-9]*[a-z0-9])?'
         which means the first character must be a lowercase letter, and all following
         characters must be a dash, lowercase letter, or digit, except the last character,
         which cannot be a dash.
@@ -284,8 +284,8 @@ resources:
         kmsKeyName:
           description:
           - The name of the encryption key that is stored in Google Cloud KMS.
-          - Your project's Compute Engine System service account (`service-{{PROJECT_NUMBER}}@compute-system.iam.gserviceaccount.com`)
-            must have `roles/cloudkms.cryptoKeyEncrypterDecrypter` to use this feature.
+          - Your project's Compute Engine System service account ('service-{{PROJECT_NUMBER}}@compute-system.iam.gserviceaccount.com')
+            must have 'roles/cloudkms.cryptoKeyEncrypterDecrypter' to use this feature.
           returned: success
           type: str
     sourceSnapshot:

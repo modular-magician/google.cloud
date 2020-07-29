@@ -58,7 +58,7 @@ options:
     description:
     - Name of the resource. Provided by the client when the resource is created. The
       name must be 1-63 characters long, and comply with RFC1035. Specifically, the
-      name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+      name must be 1-63 characters long and match the regular expression '[a-z]([-a-z0-9]*[a-z0-9])?'
       which means the first character must be a lowercase letter, and all following
       characters must be a dash, lowercase letter, or digit, except the last character,
       which cannot be a dash.
@@ -67,8 +67,8 @@ options:
   profile:
     description:
     - Profile specifies the set of SSL features that can be used by the load balancer
-      when negotiating SSL with clients. If using `CUSTOM`, the set of SSL features
-      to enable must be specified in the `customFeatures` field.
+      when negotiating SSL with clients. If using 'CUSTOM', the set of SSL features
+      to enable must be specified in the 'customFeatures' field.
     - 'Some valid choices include: "COMPATIBLE", "MODERN", "RESTRICTED", "CUSTOM"'
     required: false
     type: str
@@ -174,7 +174,7 @@ name:
   description:
   - Name of the resource. Provided by the client when the resource is created. The
     name must be 1-63 characters long, and comply with RFC1035. Specifically, the
-    name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+    name must be 1-63 characters long and match the regular expression '[a-z]([-a-z0-9]*[a-z0-9])?'
     which means the first character must be a lowercase letter, and all following
     characters must be a dash, lowercase letter, or digit, except the last character,
     which cannot be a dash.
@@ -183,8 +183,8 @@ name:
 profile:
   description:
   - Profile specifies the set of SSL features that can be used by the load balancer
-    when negotiating SSL with clients. If using `CUSTOM`, the set of SSL features
-    to enable must be specified in the `customFeatures` field.
+    when negotiating SSL with clients. If using 'CUSTOM', the set of SSL features
+    to enable must be specified in the 'customFeatures' field.
   returned: success
   type: str
 minTlsVersion:

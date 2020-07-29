@@ -43,8 +43,8 @@ options:
   location:
     description:
     - The location for the KeyRing.
-    - A full list of valid locations can be found by running `gcloud kms locations
-      list`.
+    - A full list of valid locations can be found by running 'gcloud kms locations
+      list'.
     required: true
     type: str
   project:
@@ -126,8 +126,8 @@ resources:
     location:
       description:
       - The location for the KeyRing.
-      - A full list of valid locations can be found by running `gcloud kms locations
-        list`.
+      - A full list of valid locations can be found by running 'gcloud kms locations
+        list'.
       returned: success
       type: str
 '''

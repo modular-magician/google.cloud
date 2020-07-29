@@ -58,7 +58,7 @@ options:
     description:
     - Name of the resource. Provided by the client when the resource is created. The
       name must be 1-63 characters long, and comply with RFC1035. Specifically, the
-      name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+      name must be 1-63 characters long and match the regular expression '[a-z]([-a-z0-9]*[a-z0-9])?'
       which means the first character must be a lowercase letter, and all following
       characters must be a dash, lowercase letter, or digit, except the last character,
       which cannot be a dash.
@@ -66,10 +66,10 @@ options:
     type: str
   auto_create_subnetworks:
     description:
-    - When set to `true`, the network is created in "auto subnet mode" and it will
-      create a subnet for each region automatically across the `10.128.0.0/9` address
+    - When set to 'true', the network is created in "auto subnet mode" and it will
+      create a subnet for each region automatically across the '10.128.0.0/9' address
       range.
-    - When set to `false`, the network is created in "custom subnet mode" so the user
+    - When set to 'false', the network is created in "custom subnet mode" so the user
       can explicitly connect subnetwork resources.
     required: false
     type: bool
@@ -83,9 +83,9 @@ options:
     suboptions:
       routing_mode:
         description:
-        - The network-wide routing mode to use. If set to `REGIONAL`, this network's
+        - The network-wide routing mode to use. If set to 'REGIONAL', this network's
           cloud routers will only advertise routes with subnetworks of this network
-          in the same region as the router. If set to `GLOBAL`, this network's cloud
+          in the same region as the router. If set to 'GLOBAL', this network's cloud
           routers will advertise routes with all subnetworks of this network, across
           regions.
         - 'Some valid choices include: "REGIONAL", "GLOBAL"'
@@ -176,7 +176,7 @@ name:
   description:
   - Name of the resource. Provided by the client when the resource is created. The
     name must be 1-63 characters long, and comply with RFC1035. Specifically, the
-    name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+    name must be 1-63 characters long and match the regular expression '[a-z]([-a-z0-9]*[a-z0-9])?'
     which means the first character must be a lowercase letter, and all following
     characters must be a dash, lowercase letter, or digit, except the last character,
     which cannot be a dash.
@@ -189,9 +189,9 @@ subnetworks:
   type: list
 autoCreateSubnetworks:
   description:
-  - When set to `true`, the network is created in "auto subnet mode" and it will create
-    a subnet for each region automatically across the `10.128.0.0/9` address range.
-  - When set to `false`, the network is created in "custom subnet mode" so the user
+  - When set to 'true', the network is created in "auto subnet mode" and it will create
+    a subnet for each region automatically across the '10.128.0.0/9' address range.
+  - When set to 'false', the network is created in "custom subnet mode" so the user
     can explicitly connect subnetwork resources.
   returned: success
   type: bool
@@ -209,9 +209,9 @@ routingConfig:
   contains:
     routingMode:
       description:
-      - The network-wide routing mode to use. If set to `REGIONAL`, this network's
+      - The network-wide routing mode to use. If set to 'REGIONAL', this network's
         cloud routers will only advertise routes with subnetworks of this network
-        in the same region as the router. If set to `GLOBAL`, this network's cloud
+        in the same region as the router. If set to 'GLOBAL', this network's cloud
         routers will advertise routes with all subnetworks of this network, across
         regions.
       returned: success

@@ -77,7 +77,7 @@ options:
         description:
         - Specifies the mechanism used to provide authenticated denial-of-existence
           responses.
-        - non_existence can only be updated when the state is `off`.
+        - non_existence can only be updated when the state is 'off'.
         - 'Some valid choices include: "nsec", "nsec3"'
         required: false
         type: str
@@ -92,7 +92,7 @@ options:
         - Specifies parameters that will be used for generating initial DnsKeys for
           this ManagedZone. If you provide a spec for keySigning or zoneSigning, you
           must also provide one for the other.
-        - default_key_specs can only be updated when the state is `off`.
+        - default_key_specs can only be updated when the state is 'off'.
         elements: dict
         required: false
         type: list
@@ -171,7 +171,7 @@ options:
           network_url:
             description:
             - The fully qualified URL of the VPC network to bind to.
-            - This should be formatted like `U(https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`)
+            - This should be formatted like 'U(https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}')
               .
             required: true
             type: str
@@ -199,10 +199,10 @@ options:
             type: str
           forwarding_path:
             description:
-            - Forwarding path for this TargetNameServer. If unset or `default` Cloud
+            - Forwarding path for this TargetNameServer. If unset or 'default' Cloud
               DNS will make forwarding decision based on address ranges, i.e. RFC1918
               addresses go to the VPC, Non-RFC1918 addresses go to the Internet. When
-              set to `private`, Cloud DNS will always send queries through VPC for
+              set to 'private', Cloud DNS will always send queries through VPC for
               this target .
             - 'Some valid choices include: "default", "private"'
             required: false
@@ -224,7 +224,7 @@ options:
           network_url:
             description:
             - The fully qualified URL of the VPC network to forward queries to.
-            - This should be formatted like `U(https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`)
+            - This should be formatted like 'U(https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}')
               .
             required: true
             type: str
@@ -319,7 +319,7 @@ dnssecConfig:
       description:
       - Specifies the mechanism used to provide authenticated denial-of-existence
         responses.
-      - non_existence can only be updated when the state is `off`.
+      - non_existence can only be updated when the state is 'off'.
       returned: success
       type: str
     state:
@@ -332,7 +332,7 @@ dnssecConfig:
       - Specifies parameters that will be used for generating initial DnsKeys for
         this ManagedZone. If you provide a spec for keySigning or zoneSigning, you
         must also provide one for the other.
-      - default_key_specs can only be updated when the state is `off`.
+      - default_key_specs can only be updated when the state is 'off'.
       returned: success
       type: complex
       contains:
@@ -417,7 +417,7 @@ privateVisibilityConfig:
         networkUrl:
           description:
           - The fully qualified URL of the VPC network to bind to.
-          - This should be formatted like `U(https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`)
+          - This should be formatted like 'U(https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}')
             .
           returned: success
           type: str
@@ -443,10 +443,10 @@ forwardingConfig:
           type: str
         forwardingPath:
           description:
-          - Forwarding path for this TargetNameServer. If unset or `default` Cloud
+          - Forwarding path for this TargetNameServer. If unset or 'default' Cloud
             DNS will make forwarding decision based on address ranges, i.e. RFC1918
             addresses go to the VPC, Non-RFC1918 addresses go to the Internet. When
-            set to `private`, Cloud DNS will always send queries through VPC for this
+            set to 'private', Cloud DNS will always send queries through VPC for this
             target .
           returned: success
           type: str
@@ -466,7 +466,7 @@ peeringConfig:
         networkUrl:
           description:
           - The fully qualified URL of the VPC network to forward queries to.
-          - This should be formatted like `U(https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`)
+          - This should be formatted like 'U(https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}')
             .
           returned: success
           type: str

@@ -81,11 +81,11 @@ options:
         type: str
       special_group:
         description:
-        - 'A special group to grant access to. Possible values include: * `projectOwners`:
+        - 'A special group to grant access to. Possible values include: * ''projectOwners'':
           Owners of the enclosing project.'
-        - "* `projectReaders`: Readers of the enclosing project."
-        - "* `projectWriters`: Writers of the enclosing project."
-        - "* `allAuthenticatedUsers`: All authenticated BigQuery users. ."
+        - "* 'projectReaders': Readers of the enclosing project."
+        - "* 'projectWriters': Writers of the enclosing project."
+        - "* 'allAuthenticatedUsers': All authenticated BigQuery users. ."
         required: false
         type: str
       user_by_email:
@@ -142,12 +142,12 @@ options:
     - The default lifetime of all tables in the dataset, in milliseconds.
     - The minimum value is 3600000 milliseconds (one hour).
     - Once this property is set, all newly-created tables in the dataset will have
-      an `expirationTime` property set to the creation time plus the value in this
+      an 'expirationTime' property set to the creation time plus the value in this
       property, and changing the value will only affect new tables, not existing ones.
-      When the `expirationTime` for a given table is reached, that table will be deleted
+      When the 'expirationTime' for a given table is reached, that table will be deleted
       automatically.
-    - If a table's `expirationTime` is modified or removed before the table expires,
-      or if you provide an explicit `expirationTime` when creating a table, that value
+    - If a table's 'expirationTime' is modified or removed before the table expires,
+      or if you provide an explicit 'expirationTime' when creating a table, that value
       takes precedence over the default expiration time indicated by this property.
     required: false
     type: int
@@ -156,13 +156,13 @@ options:
     - The default partition expiration for all partitioned tables in the dataset,
       in milliseconds.
     - Once this property is set, all newly-created partitioned tables in the dataset
-      will have an `expirationMs` property in the `timePartitioning` settings set
+      will have an 'expirationMs' property in the 'timePartitioning' settings set
       to this value, and changing the value will only affect new tables, not existing
       ones. The storage in a partition will have an expiration time of its partition
       time plus this value.
-    - 'Setting this property overrides the use of `defaultTableExpirationMs` for partitioned
-      tables: only one of `defaultTableExpirationMs` and `defaultPartitionExpirationMs`
-      will be used for any new partitioned table. If you provide an explicit `timePartitioning.expirationMs`
+    - 'Setting this property overrides the use of ''defaultTableExpirationMs'' for
+      partitioned tables: only one of ''defaultTableExpirationMs'' and ''defaultPartitionExpirationMs''
+      will be used for any new partitioned table. If you provide an explicit ''timePartitioning.expirationMs''
       when creating or updating a partitioned table, that value takes precedence over
       the default partition expiration time indicated by this property.'
     required: false
@@ -192,10 +192,10 @@ options:
       is a specific geographic place, such as Tokyo, and a multi-regional location
       is a large geographic area, such as the United States, that contains at least
       two geographic places.
-    - 'Possible regional values include: `asia-east1`, `asia-northeast1`, `asia-southeast1`,
-      `australia-southeast1`, `europe-north1`, `europe-west2` and `us-east4`.'
-    - 'Possible multi-regional values: `EU` and `US`.'
-    - The default value is multi-regional location `US`.
+    - 'Possible regional values include: ''asia-east1'', ''asia-northeast1'', ''asia-southeast1'',
+      ''australia-southeast1'', ''europe-north1'', ''europe-west2'' and ''us-east4''.'
+    - 'Possible multi-regional values: ''EU'' and ''US''.'
+    - The default value is multi-regional location 'US'.
     - Changing this forces a new resource to be created.
     required: false
     default: US
@@ -314,11 +314,11 @@ access:
       type: str
     specialGroup:
       description:
-      - 'A special group to grant access to. Possible values include: * `projectOwners`:
+      - 'A special group to grant access to. Possible values include: * ''projectOwners'':
         Owners of the enclosing project.'
-      - "* `projectReaders`: Readers of the enclosing project."
-      - "* `projectWriters`: Writers of the enclosing project."
-      - "* `allAuthenticatedUsers`: All authenticated BigQuery users. ."
+      - "* 'projectReaders': Readers of the enclosing project."
+      - "* 'projectWriters': Writers of the enclosing project."
+      - "* 'allAuthenticatedUsers': All authenticated BigQuery users. ."
       returned: success
       type: str
     userByEmail:
@@ -380,11 +380,11 @@ defaultTableExpirationMs:
   - The default lifetime of all tables in the dataset, in milliseconds.
   - The minimum value is 3600000 milliseconds (one hour).
   - Once this property is set, all newly-created tables in the dataset will have an
-    `expirationTime` property set to the creation time plus the value in this property,
+    'expirationTime' property set to the creation time plus the value in this property,
     and changing the value will only affect new tables, not existing ones. When the
-    `expirationTime` for a given table is reached, that table will be deleted automatically.
-  - If a table's `expirationTime` is modified or removed before the table expires,
-    or if you provide an explicit `expirationTime` when creating a table, that value
+    'expirationTime' for a given table is reached, that table will be deleted automatically.
+  - If a table's 'expirationTime' is modified or removed before the table expires,
+    or if you provide an explicit 'expirationTime' when creating a table, that value
     takes precedence over the default expiration time indicated by this property.
   returned: success
   type: int
@@ -393,13 +393,13 @@ defaultPartitionExpirationMs:
   - The default partition expiration for all partitioned tables in the dataset, in
     milliseconds.
   - Once this property is set, all newly-created partitioned tables in the dataset
-    will have an `expirationMs` property in the `timePartitioning` settings set to
+    will have an 'expirationMs' property in the 'timePartitioning' settings set to
     this value, and changing the value will only affect new tables, not existing ones.
     The storage in a partition will have an expiration time of its partition time
     plus this value.
-  - 'Setting this property overrides the use of `defaultTableExpirationMs` for partitioned
-    tables: only one of `defaultTableExpirationMs` and `defaultPartitionExpirationMs`
-    will be used for any new partitioned table. If you provide an explicit `timePartitioning.expirationMs`
+  - 'Setting this property overrides the use of ''defaultTableExpirationMs'' for partitioned
+    tables: only one of ''defaultTableExpirationMs'' and ''defaultPartitionExpirationMs''
+    will be used for any new partitioned table. If you provide an explicit ''timePartitioning.expirationMs''
     when creating or updating a partitioned table, that value takes precedence over
     the default partition expiration time indicated by this property.'
   returned: success
@@ -445,10 +445,10 @@ location:
     is a specific geographic place, such as Tokyo, and a multi-regional location is
     a large geographic area, such as the United States, that contains at least two
     geographic places.
-  - 'Possible regional values include: `asia-east1`, `asia-northeast1`, `asia-southeast1`,
-    `australia-southeast1`, `europe-north1`, `europe-west2` and `us-east4`.'
-  - 'Possible multi-regional values: `EU` and `US`.'
-  - The default value is multi-regional location `US`.
+  - 'Possible regional values include: ''asia-east1'', ''asia-northeast1'', ''asia-southeast1'',
+    ''australia-southeast1'', ''europe-north1'', ''europe-west2'' and ''us-east4''.'
+  - 'Possible multi-regional values: ''EU'' and ''US''.'
+  - The default value is multi-regional location 'US'.
   - Changing this forces a new resource to be created.
   returned: success
   type: str

@@ -105,7 +105,7 @@ options:
           of Network Endpoint Group must be hosted on instances located in the same
           zone as the Network Endpoint Group.
         - Backend services cannot mix Instance Group and Network Endpoint Group backends.
-        - When the `load_balancing_scheme` is INTERNAL, only instance groups are supported.
+        - When the 'load_balancing_scheme' is INTERNAL, only instance groups are supported.
         - Note that you must specify an Instance Group or Network Endpoint Group resource
           using the fully-qualified URL, rather than a partial URL.
         required: true
@@ -173,8 +173,8 @@ options:
   circuit_breakers:
     description:
     - Settings controlling the volume of connections to a backend service. This field
-      is applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED
-      and the `protocol` is set to HTTP, HTTPS, or HTTP2.
+      is applicable only when the 'load_balancing_scheme' is set to INTERNAL_MANAGED
+      and the 'protocol' is set to HTTP, HTTPS, or HTTP2.
     required: false
     type: dict
     suboptions:
@@ -220,8 +220,8 @@ options:
       is applicable only for HTTP connections. The affinity to a particular destination
       host will be lost when one or more hosts are added/removed from the destination
       service. This field specifies parameters that control consistent hashing.
-    - This field only applies when all of the following are true - * `load_balancing_scheme`
-      is set to INTERNAL_MANAGED * `protocol` is set to HTTP, HTTPS, or HTTP2 * `locality_lb_policy`
+    - This field only applies when all of the following are true - * 'load_balancing_scheme'
+      is set to INTERNAL_MANAGED * 'protocol' is set to HTTP, HTTPS, or HTTP2 * 'locality_lb_policy'
       is set to MAGLEV or RING_HASH .
     required: false
     type: dict
@@ -370,8 +370,8 @@ options:
     - MAGLEV - used as a drop in replacement for the ring hash load balancer.
     - Maglev is not as stable as ring hash but has faster table lookup build times
       and host selection times. For more information about Maglev, refer to https://ai.google/research/pubs/pub44824
-      This field is applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED
-      and the `protocol` is set to HTTP, HTTPS, or HTTP2.
+      This field is applicable only when the 'load_balancing_scheme' is set to INTERNAL_MANAGED
+      and the 'protocol' is set to HTTP, HTTPS, or HTTP2.
     - 'Some valid choices include: "ROUND_ROBIN", "LEAST_REQUEST", "RING_HASH", "RANDOM",
       "ORIGINAL_DESTINATION", "MAGLEV"'
     required: false
@@ -380,7 +380,7 @@ options:
     description:
     - Name of the resource. Provided by the client when the resource is created. The
       name must be 1-63 characters long, and comply with RFC1035. Specifically, the
-      name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+      name must be 1-63 characters long and match the regular expression '[a-z]([-a-z0-9]*[a-z0-9])?'
       which means the first character must be a lowercase letter, and all following
       characters must be a dash, lowercase letter, or digit, except the last character,
       which cannot be a dash.
@@ -389,8 +389,8 @@ options:
   outlier_detection:
     description:
     - Settings controlling eviction of unhealthy hosts from the load balancing pool.
-    - This field is applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED
-      and the `protocol` is set to HTTP, HTTPS, or HTTP2.
+    - This field is applicable only when the 'load_balancing_scheme' is set to INTERNAL_MANAGED
+      and the 'protocol' is set to HTTP, HTTPS, or HTTP2.
     required: false
     type: dict
     suboptions:
@@ -411,8 +411,8 @@ options:
           nanos:
             description:
             - Span of time that's a fraction of a second at nanosecond resolution.
-              Durations less than one second are represented with a 0 `seconds` field
-              and a positive `nanos` field. Must be from 0 to 999,999,999 inclusive.
+              Durations less than one second are represented with a 0 'seconds' field
+              and a positive 'nanos' field. Must be from 0 to 999,999,999 inclusive.
             required: false
             type: int
       consecutive_errors:
@@ -471,8 +471,8 @@ options:
           nanos:
             description:
             - Span of time that's a fraction of a second at nanosecond resolution.
-              Durations less than one second are represented with a 0 `seconds` field
-              and a positive `nanos` field. Must be from 0 to 999,999,999 inclusive.
+              Durations less than one second are represented with a 0 'seconds' field
+              and a positive 'nanos' field. Must be from 0 to 999,999,999 inclusive.
             required: false
             type: int
       max_ejection_percent:
@@ -721,7 +721,7 @@ backends:
         of Network Endpoint Group must be hosted on instances located in the same
         zone as the Network Endpoint Group.
       - Backend services cannot mix Instance Group and Network Endpoint Group backends.
-      - When the `load_balancing_scheme` is INTERNAL, only instance groups are supported.
+      - When the 'load_balancing_scheme' is INTERNAL, only instance groups are supported.
       - Note that you must specify an Instance Group or Network Endpoint Group resource
         using the fully-qualified URL, rather than a partial URL.
       returned: success
@@ -789,8 +789,8 @@ backends:
 circuitBreakers:
   description:
   - Settings controlling the volume of connections to a backend service. This field
-    is applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED
-    and the `protocol` is set to HTTP, HTTPS, or HTTP2.
+    is applicable only when the 'load_balancing_scheme' is set to INTERNAL_MANAGED
+    and the 'protocol' is set to HTTP, HTTPS, or HTTP2.
   returned: success
   type: complex
   contains:
@@ -832,8 +832,8 @@ consistentHash:
     is applicable only for HTTP connections. The affinity to a particular destination
     host will be lost when one or more hosts are added/removed from the destination
     service. This field specifies parameters that control consistent hashing.
-  - This field only applies when all of the following are true - * `load_balancing_scheme`
-    is set to INTERNAL_MANAGED * `protocol` is set to HTTP, HTTPS, or HTTP2 * `locality_lb_policy`
+  - This field only applies when all of the following are true - * 'load_balancing_scheme'
+    is set to INTERNAL_MANAGED * 'protocol' is set to HTTP, HTTPS, or HTTP2 * 'locality_lb_policy'
     is set to MAGLEV or RING_HASH .
   returned: success
   type: complex
@@ -992,15 +992,15 @@ localityLbPolicy:
   - MAGLEV - used as a drop in replacement for the ring hash load balancer.
   - Maglev is not as stable as ring hash but has faster table lookup build times and
     host selection times. For more information about Maglev, refer to https://ai.google/research/pubs/pub44824
-    This field is applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED
-    and the `protocol` is set to HTTP, HTTPS, or HTTP2.
+    This field is applicable only when the 'load_balancing_scheme' is set to INTERNAL_MANAGED
+    and the 'protocol' is set to HTTP, HTTPS, or HTTP2.
   returned: success
   type: str
 name:
   description:
   - Name of the resource. Provided by the client when the resource is created. The
     name must be 1-63 characters long, and comply with RFC1035. Specifically, the
-    name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+    name must be 1-63 characters long and match the regular expression '[a-z]([-a-z0-9]*[a-z0-9])?'
     which means the first character must be a lowercase letter, and all following
     characters must be a dash, lowercase letter, or digit, except the last character,
     which cannot be a dash.
@@ -1009,8 +1009,8 @@ name:
 outlierDetection:
   description:
   - Settings controlling eviction of unhealthy hosts from the load balancing pool.
-  - This field is applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED
-    and the `protocol` is set to HTTP, HTTPS, or HTTP2.
+  - This field is applicable only when the 'load_balancing_scheme' is set to INTERNAL_MANAGED
+    and the 'protocol' is set to HTTP, HTTPS, or HTTP2.
   returned: success
   type: complex
   contains:
@@ -1031,8 +1031,8 @@ outlierDetection:
         nanos:
           description:
           - Span of time that's a fraction of a second at nanosecond resolution. Durations
-            less than one second are represented with a 0 `seconds` field and a positive
-            `nanos` field. Must be from 0 to 999,999,999 inclusive.
+            less than one second are represented with a 0 'seconds' field and a positive
+            'nanos' field. Must be from 0 to 999,999,999 inclusive.
           returned: success
           type: int
     consecutiveErrors:
@@ -1086,8 +1086,8 @@ outlierDetection:
         nanos:
           description:
           - Span of time that's a fraction of a second at nanosecond resolution. Durations
-            less than one second are represented with a 0 `seconds` field and a positive
-            `nanos` field. Must be from 0 to 999,999,999 inclusive.
+            less than one second are represented with a 0 'seconds' field and a positive
+            'nanos' field. Must be from 0 to 999,999,999 inclusive.
           returned: success
           type: int
     maxEjectionPercent:

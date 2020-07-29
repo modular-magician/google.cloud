@@ -79,7 +79,7 @@ options:
     description:
     - Name of the resource. Provided by the client when the resource is created. The
       name must be 1-63 characters long, and comply with RFC1035. Specifically, the
-      name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+      name must be 1-63 characters long and match the regular expression '[a-z]([-a-z0-9]*[a-z0-9])?'
       which means the first character must be a lowercase letter, and all following
       characters must be a dash, lowercase letter, or digit, except the last character,
       which cannot be a dash.
@@ -158,14 +158,14 @@ options:
       port_specification:
         description:
         - 'Specifies how port is selected for health checking, can be one of the following
-          values: * `USE_FIXED_PORT`: The port number in `port` is used for health
+          values: * ''USE_FIXED_PORT'': The port number in ''port'' is used for health
           checking.'
-        - "* `USE_NAMED_PORT`: The `portName` is used for health checking."
-        - "* `USE_SERVING_PORT`: For NetworkEndpointGroup, the port specified for
+        - "* 'USE_NAMED_PORT': The 'portName' is used for health checking."
+        - "* 'USE_SERVING_PORT': For NetworkEndpointGroup, the port specified for
           each network endpoint is used for health checking. For other backends, the
           port or named port specified in the Backend Service is used for health checking."
-        - If not specified, HTTP health check follows behavior specified in `port`
-          and `portName` fields.
+        - If not specified, HTTP health check follows behavior specified in 'port'
+          and 'portName' fields.
         - 'Some valid choices include: "USE_FIXED_PORT", "USE_NAMED_PORT", "USE_SERVING_PORT"'
         required: false
         type: str
@@ -219,14 +219,14 @@ options:
       port_specification:
         description:
         - 'Specifies how port is selected for health checking, can be one of the following
-          values: * `USE_FIXED_PORT`: The port number in `port` is used for health
+          values: * ''USE_FIXED_PORT'': The port number in ''port'' is used for health
           checking.'
-        - "* `USE_NAMED_PORT`: The `portName` is used for health checking."
-        - "* `USE_SERVING_PORT`: For NetworkEndpointGroup, the port specified for
+        - "* 'USE_NAMED_PORT': The 'portName' is used for health checking."
+        - "* 'USE_SERVING_PORT': For NetworkEndpointGroup, the port specified for
           each network endpoint is used for health checking. For other backends, the
           port or named port specified in the Backend Service is used for health checking."
-        - If not specified, HTTPS health check follows behavior specified in `port`
-          and `portName` fields.
+        - If not specified, HTTPS health check follows behavior specified in 'port'
+          and 'portName' fields.
         - 'Some valid choices include: "USE_FIXED_PORT", "USE_NAMED_PORT", "USE_SERVING_PORT"'
         required: false
         type: str
@@ -273,14 +273,14 @@ options:
       port_specification:
         description:
         - 'Specifies how port is selected for health checking, can be one of the following
-          values: * `USE_FIXED_PORT`: The port number in `port` is used for health
+          values: * ''USE_FIXED_PORT'': The port number in ''port'' is used for health
           checking.'
-        - "* `USE_NAMED_PORT`: The `portName` is used for health checking."
-        - "* `USE_SERVING_PORT`: For NetworkEndpointGroup, the port specified for
+        - "* 'USE_NAMED_PORT': The 'portName' is used for health checking."
+        - "* 'USE_SERVING_PORT': For NetworkEndpointGroup, the port specified for
           each network endpoint is used for health checking. For other backends, the
           port or named port specified in the Backend Service is used for health checking."
-        - If not specified, TCP health check follows behavior specified in `port`
-          and `portName` fields.
+        - If not specified, TCP health check follows behavior specified in 'port'
+          and 'portName' fields.
         - 'Some valid choices include: "USE_FIXED_PORT", "USE_NAMED_PORT", "USE_SERVING_PORT"'
         required: false
         type: str
@@ -327,14 +327,14 @@ options:
       port_specification:
         description:
         - 'Specifies how port is selected for health checking, can be one of the following
-          values: * `USE_FIXED_PORT`: The port number in `port` is used for health
+          values: * ''USE_FIXED_PORT'': The port number in ''port'' is used for health
           checking.'
-        - "* `USE_NAMED_PORT`: The `portName` is used for health checking."
-        - "* `USE_SERVING_PORT`: For NetworkEndpointGroup, the port specified for
+        - "* 'USE_NAMED_PORT': The 'portName' is used for health checking."
+        - "* 'USE_SERVING_PORT': For NetworkEndpointGroup, the port specified for
           each network endpoint is used for health checking. For other backends, the
           port or named port specified in the Backend Service is used for health checking."
-        - If not specified, SSL health check follows behavior specified in `port`
-          and `portName` fields.
+        - If not specified, SSL health check follows behavior specified in 'port'
+          and 'portName' fields.
         - 'Some valid choices include: "USE_FIXED_PORT", "USE_NAMED_PORT", "USE_SERVING_PORT"'
         required: false
         type: str
@@ -388,14 +388,14 @@ options:
       port_specification:
         description:
         - 'Specifies how port is selected for health checking, can be one of the following
-          values: * `USE_FIXED_PORT`: The port number in `port` is used for health
+          values: * ''USE_FIXED_PORT'': The port number in ''port'' is used for health
           checking.'
-        - "* `USE_NAMED_PORT`: The `portName` is used for health checking."
-        - "* `USE_SERVING_PORT`: For NetworkEndpointGroup, the port specified for
+        - "* 'USE_NAMED_PORT': The 'portName' is used for health checking."
+        - "* 'USE_SERVING_PORT': For NetworkEndpointGroup, the port specified for
           each network endpoint is used for health checking. For other backends, the
           port or named port specified in the Backend Service is used for health checking."
-        - If not specified, HTTP2 health check follows behavior specified in `port`
-          and `portName` fields.
+        - If not specified, HTTP2 health check follows behavior specified in 'port'
+          and 'portName' fields.
         - 'Some valid choices include: "USE_FIXED_PORT", "USE_NAMED_PORT", "USE_SERVING_PORT"'
         required: false
         type: str
@@ -507,7 +507,7 @@ name:
   description:
   - Name of the resource. Provided by the client when the resource is created. The
     name must be 1-63 characters long, and comply with RFC1035. Specifically, the
-    name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+    name must be 1-63 characters long and match the regular expression '[a-z]([-a-z0-9]*[a-z0-9])?'
     which means the first character must be a lowercase letter, and all following
     characters must be a dash, lowercase letter, or digit, except the last character,
     which cannot be a dash.
@@ -579,13 +579,14 @@ httpHealthCheck:
     portSpecification:
       description:
       - 'Specifies how port is selected for health checking, can be one of the following
-        values: * `USE_FIXED_PORT`: The port number in `port` is used for health checking.'
-      - "* `USE_NAMED_PORT`: The `portName` is used for health checking."
-      - "* `USE_SERVING_PORT`: For NetworkEndpointGroup, the port specified for each
+        values: * ''USE_FIXED_PORT'': The port number in ''port'' is used for health
+        checking.'
+      - "* 'USE_NAMED_PORT': The 'portName' is used for health checking."
+      - "* 'USE_SERVING_PORT': For NetworkEndpointGroup, the port specified for each
         network endpoint is used for health checking. For other backends, the port
         or named port specified in the Backend Service is used for health checking."
-      - If not specified, HTTP health check follows behavior specified in `port` and
-        `portName` fields.
+      - If not specified, HTTP health check follows behavior specified in 'port' and
+        'portName' fields.
       returned: success
       type: str
 httpsHealthCheck:
@@ -634,13 +635,14 @@ httpsHealthCheck:
     portSpecification:
       description:
       - 'Specifies how port is selected for health checking, can be one of the following
-        values: * `USE_FIXED_PORT`: The port number in `port` is used for health checking.'
-      - "* `USE_NAMED_PORT`: The `portName` is used for health checking."
-      - "* `USE_SERVING_PORT`: For NetworkEndpointGroup, the port specified for each
+        values: * ''USE_FIXED_PORT'': The port number in ''port'' is used for health
+        checking.'
+      - "* 'USE_NAMED_PORT': The 'portName' is used for health checking."
+      - "* 'USE_SERVING_PORT': For NetworkEndpointGroup, the port specified for each
         network endpoint is used for health checking. For other backends, the port
         or named port specified in the Backend Service is used for health checking."
-      - If not specified, HTTPS health check follows behavior specified in `port`
-        and `portName` fields.
+      - If not specified, HTTPS health check follows behavior specified in 'port'
+        and 'portName' fields.
       returned: success
       type: str
 tcpHealthCheck:
@@ -683,13 +685,14 @@ tcpHealthCheck:
     portSpecification:
       description:
       - 'Specifies how port is selected for health checking, can be one of the following
-        values: * `USE_FIXED_PORT`: The port number in `port` is used for health checking.'
-      - "* `USE_NAMED_PORT`: The `portName` is used for health checking."
-      - "* `USE_SERVING_PORT`: For NetworkEndpointGroup, the port specified for each
+        values: * ''USE_FIXED_PORT'': The port number in ''port'' is used for health
+        checking.'
+      - "* 'USE_NAMED_PORT': The 'portName' is used for health checking."
+      - "* 'USE_SERVING_PORT': For NetworkEndpointGroup, the port specified for each
         network endpoint is used for health checking. For other backends, the port
         or named port specified in the Backend Service is used for health checking."
-      - If not specified, TCP health check follows behavior specified in `port` and
-        `portName` fields.
+      - If not specified, TCP health check follows behavior specified in 'port' and
+        'portName' fields.
       returned: success
       type: str
 sslHealthCheck:
@@ -732,13 +735,14 @@ sslHealthCheck:
     portSpecification:
       description:
       - 'Specifies how port is selected for health checking, can be one of the following
-        values: * `USE_FIXED_PORT`: The port number in `port` is used for health checking.'
-      - "* `USE_NAMED_PORT`: The `portName` is used for health checking."
-      - "* `USE_SERVING_PORT`: For NetworkEndpointGroup, the port specified for each
+        values: * ''USE_FIXED_PORT'': The port number in ''port'' is used for health
+        checking.'
+      - "* 'USE_NAMED_PORT': The 'portName' is used for health checking."
+      - "* 'USE_SERVING_PORT': For NetworkEndpointGroup, the port specified for each
         network endpoint is used for health checking. For other backends, the port
         or named port specified in the Backend Service is used for health checking."
-      - If not specified, SSL health check follows behavior specified in `port` and
-        `portName` fields.
+      - If not specified, SSL health check follows behavior specified in 'port' and
+        'portName' fields.
       returned: success
       type: str
 http2HealthCheck:
@@ -787,13 +791,14 @@ http2HealthCheck:
     portSpecification:
       description:
       - 'Specifies how port is selected for health checking, can be one of the following
-        values: * `USE_FIXED_PORT`: The port number in `port` is used for health checking.'
-      - "* `USE_NAMED_PORT`: The `portName` is used for health checking."
-      - "* `USE_SERVING_PORT`: For NetworkEndpointGroup, the port specified for each
+        values: * ''USE_FIXED_PORT'': The port number in ''port'' is used for health
+        checking.'
+      - "* 'USE_NAMED_PORT': The 'portName' is used for health checking."
+      - "* 'USE_SERVING_PORT': For NetworkEndpointGroup, the port specified for each
         network endpoint is used for health checking. For other backends, the port
         or named port specified in the Backend Service is used for health checking."
-      - If not specified, HTTP2 health check follows behavior specified in `port`
-        and `portName` fields.
+      - If not specified, HTTP2 health check follows behavior specified in 'port'
+        and 'portName' fields.
       returned: success
       type: str
 region:

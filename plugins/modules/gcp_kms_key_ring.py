@@ -31,7 +31,7 @@ DOCUMENTATION = '''
 ---
 module: gcp_kms_key_ring
 description:
-- A `KeyRing` is a toplevel logical grouping of `CryptoKeys`.
+- A 'KeyRing' is a toplevel logical grouping of 'CryptoKeys'.
 short_description: Creates a GCP KeyRing
 version_added: '2.9'
 author: Google Inc. (@googlecloudplatform)
@@ -56,8 +56,8 @@ options:
   location:
     description:
     - The location for the KeyRing.
-    - A full list of valid locations can be found by running `gcloud kms locations
-      list`.
+    - A full list of valid locations can be found by running 'gcloud kms locations
+      list'.
     required: true
     type: str
   project:
@@ -138,7 +138,7 @@ createTime:
 location:
   description:
   - The location for the KeyRing.
-  - A full list of valid locations can be found by running `gcloud kms locations list`.
+  - A full list of valid locations can be found by running 'gcloud kms locations list'.
   returned: success
   type: str
 '''

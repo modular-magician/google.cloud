@@ -54,7 +54,7 @@ options:
     - The name of the resource, provided by the client when initially creating the
       resource. The resource name must be 1-63 characters long, and comply with RFC1035.
       Specifically, the name must be 1-63 characters long and match the regular expression
-      `[a-z]([-a-z0-9]*[a-z0-9])`? which means the first character must be a lowercase
+      '[a-z]([-a-z0-9]*[a-z0-9])'? which means the first character must be a lowercase
       letter, and all following characters must be a dash, lowercase letter, or digit,
       except the last character, which cannot be a dash.
     required: true
@@ -67,7 +67,7 @@ options:
     suboptions:
       schedule:
         description:
-        - Contains one of an `hourlySchedule`, `dailySchedule`, or `weeklySchedule`.
+        - Contains one of an 'hourlySchedule', 'dailySchedule', or 'weeklySchedule'.
         required: true
         type: dict
         suboptions:
@@ -200,9 +200,9 @@ options:
         description:
         - Collocation specifies whether to place VMs inside the same availability
           domain on the same low-latency network.
-        - Specify `COLLOCATED` to enable collocation. Can only be specified with `vm_count`.
+        - Specify 'COLLOCATED' to enable collocation. Can only be specified with 'vm_count'.
           If compute instances are created with a COLLOCATED policy, then exactly
-          `vm_count` instances must be created at the same time with the resource
+          'vm_count' instances must be created at the same time with the resource
           policy attached.
         - 'Some valid choices include: "COLLOCATED"'
         required: false
@@ -272,7 +272,7 @@ name:
   description:
   - The name of the resource, provided by the client when initially creating the resource.
     The resource name must be 1-63 characters long, and comply with RFC1035. Specifically,
-    the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])`?
+    the name must be 1-63 characters long and match the regular expression '[a-z]([-a-z0-9]*[a-z0-9])'?
     which means the first character must be a lowercase letter, and all following
     characters must be a dash, lowercase letter, or digit, except the last character,
     which cannot be a dash.
@@ -286,7 +286,7 @@ snapshotSchedulePolicy:
   contains:
     schedule:
       description:
-      - Contains one of an `hourlySchedule`, `dailySchedule`, or `weeklySchedule`.
+      - Contains one of an 'hourlySchedule', 'dailySchedule', or 'weeklySchedule'.
       returned: success
       type: complex
       contains:
@@ -411,8 +411,8 @@ groupPlacementPolicy:
       description:
       - Collocation specifies whether to place VMs inside the same availability domain
         on the same low-latency network.
-      - Specify `COLLOCATED` to enable collocation. Can only be specified with `vm_count`.
-        If compute instances are created with a COLLOCATED policy, then exactly `vm_count`
+      - Specify 'COLLOCATED' to enable collocation. Can only be specified with 'vm_count'.
+        If compute instances are created with a COLLOCATED policy, then exactly 'vm_count'
         instances must be created at the same time with the resource policy attached.
       returned: success
       type: str

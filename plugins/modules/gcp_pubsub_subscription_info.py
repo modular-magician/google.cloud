@@ -203,14 +203,14 @@ resources:
         from the moment a message is published. If retainAckedMessages is true, then
         this also configures the retention of acknowledged messages, and thus configures
         how far back in time a subscriptions.seek can be done. Defaults to 7 days.
-        Cannot be more than 7 days (`"604800s"`) or less than 10 minutes (`"600s"`).
+        Cannot be more than 7 days ('"604800s"') or less than 10 minutes ('"600s"').
       - 'A duration in seconds with up to nine fractional digits, terminated by ''s''.
-        Example: `"600.5s"`.'
+        Example: ''"600.5s"''.'
       returned: success
       type: str
     retainAckedMessages:
       description:
-      - Indicates whether to retain acknowledged messages. If `true`, then messages
+      - Indicates whether to retain acknowledged messages. If 'true', then messages
         are not expunged from the subscription's backlog, even if they are acknowledged,
         until they fall out of the messageRetentionDuration window.
       returned: success
@@ -249,7 +249,7 @@ resources:
         deadLetterTopic:
           description:
           - The name of the topic to which dead letter messages should be published.
-          - Format is `projects/{project}/topics/{topic}`.
+          - Format is 'projects/{project}/topics/{topic}'.
           - The Cloud Pub/Sub service\naccount associated with the enclosing subscription's
             parent project (i.e., service-{project_number}@gcp-sa-pubsub.iam.gserviceaccount.com)
             must have permission to Publish() to this topic.

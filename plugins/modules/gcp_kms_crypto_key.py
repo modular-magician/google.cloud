@@ -27,11 +27,12 @@ __metaclass__ = type
 
 ANSIBLE_METADATA = {'metadata_version': '1.1', 'status': ["preview"], 'supported_by': 'community'}
 
-DOCUMENTATION = '''
+DOCUMENTATION = (
+    '''
 ---
 module: gcp_kms_crypto_key
 description:
-- A `CryptoKey` represents a logical key that can be used for cryptographic operations.
+- A 'CryptoKey' represents a logical key that can be used for cryptographic operations.
 short_description: Creates a GCP CryptoKey
 version_added: '2.9'
 author: Google Inc. (@googlecloudplatform)
@@ -72,7 +73,7 @@ options:
       the primary.
     - The first rotation will take place after the specified period. The rotation
       period has the format of a decimal number with up to 9 fractional digits, followed
-      by the letter `s` (seconds). It must be greater than a day (ie, 86400).
+      by the letter 's' (seconds). It must be greater than a day (ie, 86400).
     required: false
     type: str
   version_template:
@@ -97,7 +98,9 @@ options:
   key_ring:
     description:
     - The KeyRing that this key belongs to.
-    - 'Format: `''projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}''`.'
+    - 'Format: '''
+    'projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}'
+    '''.'
     required: true
     type: str
   project:
@@ -151,6 +154,7 @@ notes:
 - Environment variables values will only be used if the playbook values are not set.
 - The I(service_account_email) and I(service_account_file) options are mutually exclusive.
 '''
+)
 
 EXAMPLES = '''
 - name: create a key ring
@@ -173,7 +177,8 @@ EXAMPLES = '''
     state: present
 '''
 
-RETURN = '''
+RETURN = (
+    '''
 name:
   description:
   - The resource name for the CryptoKey.
@@ -202,7 +207,7 @@ rotationPeriod:
     primary.
   - The first rotation will take place after the specified period. The rotation period
     has the format of a decimal number with up to 9 fractional digits, followed by
-    the letter `s` (seconds). It must be greater than a day (ie, 86400).
+    the letter 's' (seconds). It must be greater than a day (ie, 86400).
   returned: success
   type: str
 versionTemplate:
@@ -231,10 +236,13 @@ nextRotationTime:
 keyRing:
   description:
   - The KeyRing that this key belongs to.
-  - 'Format: `''projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}''`.'
+  - 'Format: '''
+    'projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}'
+    '''.'
   returned: success
   type: str
 '''
+)
 
 ################################################################################
 # Imports

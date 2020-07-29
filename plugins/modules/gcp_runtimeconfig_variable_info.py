@@ -112,12 +112,12 @@ resources:
   contains:
     value:
       description:
-      - The binary value of the variable. Either this or `text` can be set.
+      - The binary value of the variable. Either this or 'text' can be set.
       returned: success
       type: str
     text:
       description:
-      - The string value of the variable. Either this or `value` can be set.
+      - The string value of the variable. Either this or 'value' can be set.
       returned: success
       type: str
     name:

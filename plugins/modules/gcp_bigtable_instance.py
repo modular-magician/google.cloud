@@ -62,7 +62,7 @@ options:
     type: str
   type:
     description:
-    - The type of the instance. Defaults to `PRODUCTION`.
+    - The type of the instance. Defaults to 'PRODUCTION'.
     - 'Some valid choices include: "TYPE_UNSPECIFIED", "PRODUCTION", "DEVELOPMENT"'
     required: false
     type: str
@@ -102,7 +102,7 @@ options:
         description:
         - The location where this cluster's nodes and storage reside. For best performance,
           clients should be located as close as possible to this cluster. Currently
-          only zones are supported, so values should be of the form `projects/<project>/locations/<zone>`.
+          only zones are supported, so values should be of the form 'projects/<project>/locations/<zone>'.
         required: false
         type: str
   project:
@@ -178,7 +178,7 @@ displayName:
   type: str
 type:
   description:
-  - The type of the instance. Defaults to `PRODUCTION`.
+  - The type of the instance. Defaults to 'PRODUCTION'.
   returned: success
   type: str
 labels:
@@ -215,7 +215,7 @@ clusters:
       description:
       - The location where this cluster's nodes and storage reside. For best performance,
         clients should be located as close as possible to this cluster. Currently
-        only zones are supported, so values should be of the form `projects/<project>/locations/<zone>`.
+        only zones are supported, so values should be of the form 'projects/<project>/locations/<zone>'.
       returned: success
       type: str
     state:

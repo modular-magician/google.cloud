@@ -123,7 +123,7 @@ resources:
       - The name of the resource, provided by the client when initially creating the
         resource. The resource name must be 1-63 characters long, and comply with
         RFC1035. Specifically, the name must be 1-63 characters long and match the
-        regular expression `[a-z]([-a-z0-9]*[a-z0-9])`? which means the first character
+        regular expression '[a-z]([-a-z0-9]*[a-z0-9])'? which means the first character
         must be a lowercase letter, and all following characters must be a dash, lowercase
         letter, or digit, except the last character, which cannot be a dash.
       returned: success
@@ -136,7 +136,7 @@ resources:
       contains:
         schedule:
           description:
-          - Contains one of an `hourlySchedule`, `dailySchedule`, or `weeklySchedule`.
+          - Contains one of an 'hourlySchedule', 'dailySchedule', or 'weeklySchedule'.
           returned: success
           type: complex
           contains:
@@ -263,9 +263,9 @@ resources:
           description:
           - Collocation specifies whether to place VMs inside the same availability
             domain on the same low-latency network.
-          - Specify `COLLOCATED` to enable collocation. Can only be specified with
-            `vm_count`. If compute instances are created with a COLLOCATED policy,
-            then exactly `vm_count` instances must be created at the same time with
+          - Specify 'COLLOCATED' to enable collocation. Can only be specified with
+            'vm_count'. If compute instances are created with a COLLOCATED policy,
+            then exactly 'vm_count' instances must be created at the same time with
             the resource policy attached.
           returned: success
           type: str

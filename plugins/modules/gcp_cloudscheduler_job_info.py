@@ -203,7 +203,7 @@ resources:
           - 'The full resource name for the Cloud Pub/Sub topic to which messages
             will be published when a job is delivered. ~>**NOTE**: The topic name
             must be in the same format as required by PubSub''s PublishRequest.name,
-            e.g. `projects/my-project/topics/my-topic`.'
+            e.g. ''projects/my-project/topics/my-topic''.'
           returned: success
           type: str
         data:

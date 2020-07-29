@@ -53,7 +53,7 @@ options:
     - The charset value. See MySQL's [Supported Character Sets and Collations](U(https://dev.mysql.com/doc/refman/5.7/en/charset-charsets.html))
       and Postgres' [Character Set Support](U(https://www.postgresql.org/docs/9.6/static/multibyte.html))
       for more details and supported values. Postgres databases only support a value
-      of `UTF8` at creation time.
+      of 'UTF8' at creation time.
     required: false
     type: str
   collation:
@@ -61,7 +61,7 @@ options:
     - The collation value. See MySQL's [Supported Character Sets and Collations](U(https://dev.mysql.com/doc/refman/5.7/en/charset-charsets.html))
       and Postgres' [Collation Support](U(https://www.postgresql.org/docs/9.6/static/collation.html))
       for more details and supported values. Postgres databases only support a value
-      of `en_US.UTF8` at creation time.
+      of 'en_US.UTF8' at creation time.
     required: false
     type: str
   name:
@@ -148,7 +148,7 @@ charset:
   - The charset value. See MySQL's [Supported Character Sets and Collations](U(https://dev.mysql.com/doc/refman/5.7/en/charset-charsets.html))
     and Postgres' [Character Set Support](U(https://www.postgresql.org/docs/9.6/static/multibyte.html))
     for more details and supported values. Postgres databases only support a value
-    of `UTF8` at creation time.
+    of 'UTF8' at creation time.
   returned: success
   type: str
 collation:
@@ -156,7 +156,7 @@ collation:
   - The collation value. See MySQL's [Supported Character Sets and Collations](U(https://dev.mysql.com/doc/refman/5.7/en/charset-charsets.html))
     and Postgres' [Collation Support](U(https://www.postgresql.org/docs/9.6/static/collation.html))
     for more details and supported values. Postgres databases only support a value
-    of `en_US.UTF8` at creation time.
+    of 'en_US.UTF8' at creation time.
   returned: success
   type: str
 name:
