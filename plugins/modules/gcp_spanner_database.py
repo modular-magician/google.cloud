@@ -60,6 +60,9 @@ options:
       Statements can create tables, indexes, etc. These statements execute atomically
       with the creation of the database: if there is an error in any statement, the
       database is not created.'
+    - Once a database is created, changes to this list cannot be used to migrate the
+      schema in the existing database. We recommend users to rely on schema management
+      tools instead of using this option.
     elements: str
     required: false
     type: list
@@ -163,6 +166,9 @@ extraStatements:
     Statements can create tables, indexes, etc. These statements execute atomically
     with the creation of the database: if there is an error in any statement, the
     database is not created.'
+  - Once a database is created, changes to this list cannot be used to migrate the
+    schema in the existing database. We recommend users to rely on schema management
+    tools instead of using this option.
   returned: success
   type: list
 instance:
