@@ -226,6 +226,38 @@ options:
         - If this parameter is 0, a default value of 5 is used.
         required: false
         type: int
+  retry_policy:
+    description:
+    - A policy that specifies how Cloud Pub/Sub retries message delivery.
+    - Retry delay will be exponential based on provided minimum and maximum backoffs.
+    - https://en.wikipedia.org/wiki/Exponential_backoff.
+    - RetryPolicy will be triggered on NACKs or acknowledgement deadline exceeded
+      events for a given message.
+    - Retry Policy is implemented on a best effort basis. At times, the delay between
+      consecutive deliveries may not match the configuration. That is, delay can be
+      more or less than configured backoff.
+    required: false
+    type: dict
+    version_added: '2.10'
+    suboptions:
+      maximum_backoff:
+        description:
+        - Specifies the maximum delay between consecutive deliveries of a given message.
+          Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+        - A duration in seconds with up to nine fractional digits, terminated by 's'.
+        - Example - "3.5s".
+        required: false
+        default: 600s
+        type: str
+      minimum_backoff:
+        description:
+        - Specifies the minimum delay between consecutive deliveries of a given message.
+        - Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+        - A duration in seconds with up to nine fractional digits, terminated by 's'.
+        - Example - "3.5s".
+        required: false
+        default: 10s
+        type: str
   project:
     description:
     - The Google Cloud Platform project to use.
@@ -464,6 +496,35 @@ deadLetterPolicy:
       - If this parameter is 0, a default value of 5 is used.
       returned: success
       type: int
+retryPolicy:
+  description:
+  - A policy that specifies how Cloud Pub/Sub retries message delivery.
+  - Retry delay will be exponential based on provided minimum and maximum backoffs.
+  - https://en.wikipedia.org/wiki/Exponential_backoff.
+  - RetryPolicy will be triggered on NACKs or acknowledgement deadline exceeded events
+    for a given message.
+  - Retry Policy is implemented on a best effort basis. At times, the delay between
+    consecutive deliveries may not match the configuration. That is, delay can be
+    more or less than configured backoff.
+  returned: success
+  type: complex
+  contains:
+    maximumBackoff:
+      description:
+      - Specifies the maximum delay between consecutive deliveries of a given message.
+        Value should be between 0 and 600 seconds. Defaults to 600 seconds.
+      - A duration in seconds with up to nine fractional digits, terminated by 's'.
+      - Example - "3.5s".
+      returned: success
+      type: str
+    minimumBackoff:
+      description:
+      - Specifies the minimum delay between consecutive deliveries of a given message.
+      - Value should be between 0 and 600 seconds. Defaults to 10 seconds.
+      - A duration in seconds with up to nine fractional digits, terminated by 's'.
+      - Example - "3.5s".
+      returned: success
+      type: str
 '''
 
 ################################################################################
@@ -508,6 +569,7 @@ def main():
             retain_acked_messages=dict(type='bool'),
             expiration_policy=dict(type='dict', options=dict(ttl=dict(required=True, type='str'))),
             dead_letter_policy=dict(type='dict', options=dict(dead_letter_topic=dict(type='str'), max_delivery_attempts=dict(type='int'))),
+            retry_policy=dict(type='dict', options=dict(maximum_backoff=dict(default='600s', type='str'), minimum_backoff=dict(default='10s', type='str'))),
         )
     )
 
@@ -570,6 +632,8 @@ def updateMask(request, response):
         update_mask.append('expirationPolicy')
     if request.get('deadLetterPolicy') != response.get('deadLetterPolicy'):
         update_mask.append('deadLetterPolicy')
+    if request.get('retryPolicy') != response.get('retryPolicy'):
+        update_mask.append('retryPolicy')
     return ','.join(update_mask)
 
 
@@ -589,6 +653,7 @@ def resource_to_request(module):
         u'retainAckedMessages': module.params.get('retain_acked_messages'),
         u'expirationPolicy': SubscriptionExpirationpolicy(module.params.get('expiration_policy', {}), module).to_request(),
         u'deadLetterPolicy': SubscriptionDeadletterpolicy(module.params.get('dead_letter_policy', {}), module).to_request(),
+        u'retryPolicy': SubscriptionRetrypolicy(module.params.get('retry_policy', {}), module).to_request(),
     }
     return_vals = {}
     for k, v in request.items():
@@ -663,6 +728,7 @@ def response_to_hash(module, response):
         u'retainAckedMessages': response.get(u'retainAckedMessages'),
         u'expirationPolicy': SubscriptionExpirationpolicy(response.get(u'expirationPolicy', {}), module).from_response(),
         u'deadLetterPolicy': SubscriptionDeadletterpolicy(response.get(u'deadLetterPolicy', {}), module).from_response(),
+        u'retryPolicy': SubscriptionRetrypolicy(response.get(u'retryPolicy', {}), module).from_response(),
     }
 
 
@@ -768,6 +834,21 @@ class SubscriptionDeadletterpolicy(object):
         return remove_nones_from_dict(
             {u'deadLetterTopic': self.request.get(u'deadLetterTopic'), u'maxDeliveryAttempts': self.request.get(u'maxDeliveryAttempts')}
         )
+
+
+class SubscriptionRetrypolicy(object):
+    def __init__(self, request, module):
+        self.module = module
+        if request:
+            self.request = request
+        else:
+            self.request = {}
+
+    def to_request(self):
+        return remove_nones_from_dict({u'maximumBackoff': self.request.get('maximum_backoff'), u'minimumBackoff': self.request.get('minimum_backoff')})
+
+    def from_response(self):
+        return remove_nones_from_dict({u'maximumBackoff': self.request.get(u'maximumBackoff'), u'minimumBackoff': self.request.get(u'minimumBackoff')})
 
 
 if __name__ == '__main__':
