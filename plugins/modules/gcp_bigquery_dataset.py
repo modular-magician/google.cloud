@@ -288,6 +288,12 @@ access:
   returned: success
   type: complex
   contains:
+    id:
+      description:
+      - The fully-qualified unique name of the dataset in the format projectId:datasetId
+        .
+      returned: success
+      type: str
     domain:
       description:
       - A domain to grant access to. Any users signed in with the domain specified
