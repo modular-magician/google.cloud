@@ -133,7 +133,7 @@ resources:
       - The unique identifier for the resource. This identifier is defined by the
         server.
       returned: success
-      type: int
+      type: str
     name:
       description:
       - Name of the resource. Provided by the client when the resource is created.

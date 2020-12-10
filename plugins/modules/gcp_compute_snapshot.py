@@ -231,7 +231,7 @@ id:
   description:
   - The unique identifier for the resource.
   returned: success
-  type: int
+  type: str
 diskSizeGb:
   description:
   - Size of the snapshot, specified in GB.

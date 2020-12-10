@@ -146,7 +146,7 @@ resources:
       description:
       - The unique identifier for the resource.
       returned: success
-      type: int
+      type: str
     name:
       description:
       - Name of the resource. The name must be 1-63 characters long, and comply with

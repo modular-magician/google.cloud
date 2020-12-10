@@ -212,7 +212,7 @@ id:
   description:
   - Unique identifier for the resource.
   returned: success
-  type: int
+  type: str
 name:
   description:
   - Name of the resource. Provided by the client when the resource is created. The

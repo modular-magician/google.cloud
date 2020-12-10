@@ -1720,7 +1720,7 @@ id:
   description:
   - The unique identifier for the resource.
   returned: success
-  type: int
+  type: str
 fingerprint:
   description:
   - Fingerprint of this resource. This field is used internally during updates of

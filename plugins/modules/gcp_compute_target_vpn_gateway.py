@@ -186,7 +186,7 @@ id:
   description:
   - The unique identifier for the resource.
   returned: success
-  type: int
+  type: str
 network:
   description:
   - The network this VPN gateway is accepting traffic for.

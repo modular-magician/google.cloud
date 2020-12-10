@@ -2661,7 +2661,7 @@ id:
   description:
   - The unique identifier for the resource.
   returned: success
-  type: int
+  type: str
 fingerprint:
   description:
   - Fingerprint of this resource. A hash of the contents stored in this object. This

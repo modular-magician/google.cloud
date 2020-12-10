@@ -319,7 +319,7 @@ id:
   description:
   - The unique identifier for the resource.
   returned: success
-  type: int
+  type: str
 IPAddress:
   description:
   - The IP address that this forwarding rule is serving on behalf of.

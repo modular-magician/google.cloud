@@ -237,7 +237,7 @@ id:
   description:
   - The unique identifier for the resource.
   returned: success
-  type: int
+  type: str
 ipCidrRange:
   description:
   - The range of internal addresses that are owned by this subnetwork.

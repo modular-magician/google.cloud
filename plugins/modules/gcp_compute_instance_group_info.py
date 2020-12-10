@@ -134,7 +134,7 @@ resources:
       description:
       - A unique identifier for this instance group.
       returned: success
-      type: int
+      type: str
     name:
       description:
       - The name of the instance group.

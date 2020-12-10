@@ -250,7 +250,7 @@ id:
   description:
   - The unique identifier for the resource.
   returned: success
-  type: int
+  type: str
 instances:
   description:
   - A list of virtual machine instances serving this pool.

@@ -795,7 +795,7 @@ id:
   description:
   - The unique identifier for the resource. This identifier is defined by the server.
   returned: success
-  type: int
+  type: str
 labelFingerprint:
   description:
   - The fingerprint used for optimistic locking of this resource. Used internally

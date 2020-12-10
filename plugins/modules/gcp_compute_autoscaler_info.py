@@ -123,7 +123,7 @@ resources:
       description:
       - Unique identifier for the resource.
       returned: success
-      type: int
+      type: str
     creationTimestamp:
       description:
       - Creation timestamp in RFC3339 text format.

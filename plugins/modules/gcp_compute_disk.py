@@ -309,7 +309,7 @@ id:
   description:
   - The unique identifier for the resource.
   returned: success
-  type: int
+  type: str
 lastAttachTimestamp:
   description:
   - Last attach timestamp in RFC3339 text format.

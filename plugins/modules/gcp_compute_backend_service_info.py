@@ -438,7 +438,7 @@ resources:
       description:
       - The unique identifier for the resource.
       returned: success
-      type: int
+      type: str
     iap:
       description:
       - Settings for enabling Cloud Identity Aware Proxy.

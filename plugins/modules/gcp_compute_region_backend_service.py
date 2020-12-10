@@ -1097,7 +1097,7 @@ id:
   description:
   - The unique identifier for the resource.
   returned: success
-  type: int
+  type: str
 loadBalancingScheme:
   description:
   - Indicates what kind of load balancing this regional backend service will be used

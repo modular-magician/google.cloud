@@ -129,7 +129,7 @@ resources:
       - The unique identifier for the resource. This identifier is defined by the
         server.
       returned: success
-      type: int
+      type: str
     name:
       description:
       - Name of the resource. The name is 1-63 characters long and complies with RFC1035.

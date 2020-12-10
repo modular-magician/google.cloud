@@ -206,7 +206,7 @@ resources:
       description:
       - A unique identifier for this resource.
       returned: success
-      type: int
+      type: str
     instanceGroup:
       description:
       - The instance group being managed.

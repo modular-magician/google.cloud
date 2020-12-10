@@ -379,7 +379,7 @@ id:
   description:
   - The unique identifier for the resource. This identifier is defined by the server.
   returned: success
-  type: int
+  type: str
 imageEncryptionKey:
   description:
   - Encrypts the image using a customer-supplied encryption key.
