@@ -403,7 +403,7 @@ def response_to_hash(module, response):
         u'autoCreateSubnetworks': module.params.get('auto_create_subnetworks'),
         u'creationTimestamp': response.get(u'creationTimestamp'),
         u'routingConfig': NetworkRoutingconfig(response.get(u'routingConfig', {}), module).from_response(),
-        u'mtu': module.params.get('mtu'),
+        u'mtu': response.get(u'mtu'),
     }
 
 
