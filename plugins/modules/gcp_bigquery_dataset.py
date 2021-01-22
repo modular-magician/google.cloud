@@ -31,7 +31,7 @@ DOCUMENTATION = '''
 ---
 module: gcp_bigquery_dataset
 description:
-- Datasets allow you to organize and control access to your tables.
+- Datasets allow you to organize and control access to your tables. TEST .
 short_description: Creates a GCP Dataset
 author: Google Inc. (@googlecloudplatform)
 requirements:
