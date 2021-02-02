@@ -227,6 +227,12 @@ resources:
         instance - STANDARD_HA: highly available primary/replica instances .'
       returned: success
       type: str
+    transitEncryptionMode:
+      description:
+      - 'The TLS encryption mode of the Redis instance. Must be one of: - TRANSIT_ENCRYPTION_MODE_UNSPECIFIED
+        - SERVER_AUTHENTICATION - DISABLED .'
+      returned: success
+      type: str
     region:
       description:
       - The name of the Redis region of the instance.

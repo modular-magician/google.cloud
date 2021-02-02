@@ -135,6 +135,15 @@ options:
     required: false
     default: BASIC
     type: str
+  transit_encryption_mode:
+    description:
+    - 'The TLS encryption mode of the Redis instance. Must be one of: - TRANSIT_ENCRYPTION_MODE_UNSPECIFIED
+      - SERVER_AUTHENTICATION - DISABLED .'
+    - 'Some valid choices include: "TRANSIT_ENCRYPTION_MODE_UNSPECIFIED", "SERVER_AUTHENTICATION",
+      "DISABLED"'
+    required: false
+    default: SERVER_AUTHENTICATION
+    type: str
   region:
     description:
     - The name of the Redis region of the instance.
@@ -338,6 +347,12 @@ tier:
     instance - STANDARD_HA: highly available primary/replica instances .'
   returned: success
   type: str
+transitEncryptionMode:
+  description:
+  - 'The TLS encryption mode of the Redis instance. Must be one of: - TRANSIT_ENCRYPTION_MODE_UNSPECIFIED
+    - SERVER_AUTHENTICATION - DISABLED .'
+  returned: success
+  type: str
 region:
   description:
   - The name of the Redis region of the instance.
@@ -377,6 +392,7 @@ def main():
             redis_version=dict(type='str'),
             reserved_ip_range=dict(type='str'),
             tier=dict(default='BASIC', type='str'),
+            transit_encryption_mode=dict(default='SERVER_AUTHENTICATION', type='str'),
             region=dict(required=True, type='str'),
         )
     )
@@ -459,6 +475,7 @@ def resource_to_request(module):
         u'redisVersion': module.params.get('redis_version'),
         u'reservedIpRange': module.params.get('reserved_ip_range'),
         u'tier': module.params.get('tier'),
+        u'transitEncryptionMode': module.params.get('transit_encryption_mode'),
     }
     return_vals = {}
     for k, v in request.items():
@@ -546,6 +563,7 @@ def response_to_hash(module, response):
         u'redisVersion': module.params.get('redis_version'),
         u'reservedIpRange': module.params.get('reserved_ip_range'),
         u'tier': module.params.get('tier'),
+        u'transitEncryptionMode': module.params.get('transit_encryption_mode'),
     }
 
 
