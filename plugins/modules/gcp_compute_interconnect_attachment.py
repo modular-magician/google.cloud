@@ -53,7 +53,6 @@ options:
     - Whether the VLAN attachment is enabled or disabled. When using PARTNER type
       this will Pre-Activate the interconnect attachment .
     required: false
-    default: 'true'
     type: bool
   interconnect:
     description:
@@ -88,6 +87,43 @@ options:
       will be provided to the Partner via the pairing key so that the provisioned
       circuit will lie in the specified domain. If not specified, the value will default
       to AVAILABILITY_DOMAIN_ANY.
+    - 'Some valid choices include: "AVAILABILITY_DOMAIN_1", "AVAILABILITY_DOMAIN_2",
+      "AVAILABILITY_DOMAIN_ANY"'
+    required: false
+    type: str
+  partner_metadata:
+    description:
+    - Informational metadata about Partner attachments from Partners to display to
+      customers. Output only for for PARTNER type, mutable for PARTNER_PROVIDER, not
+      available for DEDICATED.
+    required: false
+    type: dict
+    suboptions:
+      partner_name:
+        description:
+        - Plain text name of the Partner providing this attachment. This value may
+          be validated to match approved Partner values.
+        required: false
+        type: str
+      interconnect_name:
+        description:
+        - Plain text name of the Interconnect this attachment is connected to, as
+          displayed in the Partner's portal. For instance "Chicago 1". This value
+          may be validated to match approved Partner values.
+        required: false
+        type: str
+      portal_url:
+        description:
+        - URL of the Partner's portal for this Attachment. Partners may customise
+          this to be a deep link to the specific resource on the Partner portal. This
+          value may be validated to match approved Partner values.
+        required: false
+        type: str
+  pairing_key:
+    description:
+    - '[Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present
+      for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate
+      provisioning with a selected partner. Of the form "XXXXX/region/domain" .'
     required: false
     type: str
   type:
@@ -107,7 +143,7 @@ options:
       of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_router task and then set this router field to "{{ name-of-resource
       }}"'
-    required: true
+    required: false
     type: dict
   name:
     description:
@@ -246,11 +282,39 @@ edgeAvailabilityDomain:
     AVAILABILITY_DOMAIN_ANY.
   returned: success
   type: str
+partnerMetadata:
+  description:
+  - Informational metadata about Partner attachments from Partners to display to customers.
+    Output only for for PARTNER type, mutable for PARTNER_PROVIDER, not available
+    for DEDICATED.
+  returned: success
+  type: complex
+  contains:
+    partnerName:
+      description:
+      - Plain text name of the Partner providing this attachment. This value may be
+        validated to match approved Partner values.
+      returned: success
+      type: str
+    interconnectName:
+      description:
+      - Plain text name of the Interconnect this attachment is connected to, as displayed
+        in the Partner's portal. For instance "Chicago 1". This value may be validated
+        to match approved Partner values.
+      returned: success
+      type: str
+    portalUrl:
+      description:
+      - URL of the Partner's portal for this Attachment. Partners may customise this
+        to be a deep link to the specific resource on the Partner portal. This value
+        may be validated to match approved Partner values.
+      returned: success
+      type: str
 pairingKey:
   description:
-  - '[Output only for type PARTNER. Not present for DEDICATED]. The opaque identifier
-    of an PARTNER attachment used to initiate provisioning with a selected partner.
-    Of the form "XXXXX/region/domain" .'
+  - '[Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for
+    DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning
+    with a selected partner. Of the form "XXXXX/region/domain" .'
   returned: success
   type: str
 partnerAsn:
@@ -368,13 +432,15 @@ def main():
     module = GcpModule(
         argument_spec=dict(
             state=dict(default='present', choices=['present', 'absent'], type='str'),
-            admin_enabled=dict(default=True, type='bool'),
+            admin_enabled=dict(type='bool'),
             interconnect=dict(type='str'),
             description=dict(type='str'),
             bandwidth=dict(type='str'),
             edge_availability_domain=dict(type='str'),
+            partner_metadata=dict(type='dict', options=dict(partner_name=dict(type='str'), interconnect_name=dict(type='str'), portal_url=dict(type='str'))),
+            pairing_key=dict(type='str'),
             type=dict(type='str'),
-            router=dict(required=True, type='dict'),
+            router=dict(type='dict'),
             name=dict(required=True, type='str'),
             candidate_subnets=dict(type='list', elements='str'),
             vlan_tag8021q=dict(type='int'),
@@ -436,6 +502,8 @@ def resource_to_request(module):
         u'description': module.params.get('description'),
         u'bandwidth': module.params.get('bandwidth'),
         u'edgeAvailabilityDomain': module.params.get('edge_availability_domain'),
+        u'partnerMetadata': InterconnectAttachmentPartnermetadata(module.params.get('partner_metadata', {}), module).to_request(),
+        u'pairingKey': module.params.get('pairing_key'),
         u'type': module.params.get('type'),
         u'router': replace_resource_dict(module.params.get(u'router', {}), 'selfLink'),
         u'name': module.params.get('name'),
@@ -513,7 +581,8 @@ def response_to_hash(module, response):
         u'description': response.get(u'description'),
         u'bandwidth': response.get(u'bandwidth'),
         u'edgeAvailabilityDomain': module.params.get('edge_availability_domain'),
-        u'pairingKey': response.get(u'pairingKey'),
+        u'partnerMetadata': InterconnectAttachmentPartnermetadata(response.get(u'partnerMetadata', {}), module).from_response(),
+        u'pairingKey': module.params.get('pairing_key'),
         u'partnerAsn': response.get(u'partnerAsn'),
         u'privateInterconnectInfo': InterconnectAttachmentPrivateinterconnectinfo(response.get(u'privateInterconnectInfo', {}), module).from_response(),
         u'type': module.params.get('type'),
@@ -570,6 +639,33 @@ def raise_if_errors(response, err_path, module):
     errors = navigate_hash(response, err_path)
     if errors is not None:
         module.fail_json(msg=errors)
+
+
+class InterconnectAttachmentPartnermetadata(object):
+    def __init__(self, request, module):
+        self.module = module
+        if request:
+            self.request = request
+        else:
+            self.request = {}
+
+    def to_request(self):
+        return remove_nones_from_dict(
+            {
+                u'partnerName': self.request.get('partner_name'),
+                u'interconnectName': self.request.get('interconnect_name'),
+                u'portalUrl': self.request.get('portal_url'),
+            }
+        )
+
+    def from_response(self):
+        return remove_nones_from_dict(
+            {
+                u'partnerName': self.request.get(u'partnerName'),
+                u'interconnectName': self.request.get(u'interconnectName'),
+                u'portalUrl': self.request.get(u'portalUrl'),
+            }
+        )
 
 
 class InterconnectAttachmentPrivateinterconnectinfo(object):

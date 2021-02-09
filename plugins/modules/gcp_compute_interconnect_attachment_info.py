@@ -169,11 +169,39 @@ resources:
         default to AVAILABILITY_DOMAIN_ANY.
       returned: success
       type: str
+    partnerMetadata:
+      description:
+      - Informational metadata about Partner attachments from Partners to display
+        to customers. Output only for for PARTNER type, mutable for PARTNER_PROVIDER,
+        not available for DEDICATED.
+      returned: success
+      type: complex
+      contains:
+        partnerName:
+          description:
+          - Plain text name of the Partner providing this attachment. This value may
+            be validated to match approved Partner values.
+          returned: success
+          type: str
+        interconnectName:
+          description:
+          - Plain text name of the Interconnect this attachment is connected to, as
+            displayed in the Partner's portal. For instance "Chicago 1". This value
+            may be validated to match approved Partner values.
+          returned: success
+          type: str
+        portalUrl:
+          description:
+          - URL of the Partner's portal for this Attachment. Partners may customise
+            this to be a deep link to the specific resource on the Partner portal.
+            This value may be validated to match approved Partner values.
+          returned: success
+          type: str
     pairingKey:
       description:
-      - '[Output only for type PARTNER. Not present for DEDICATED]. The opaque identifier
-        of an PARTNER attachment used to initiate provisioning with a selected partner.
-        Of the form "XXXXX/region/domain" .'
+      - '[Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present
+        for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate
+        provisioning with a selected partner. Of the form "XXXXX/region/domain" .'
       returned: success
       type: str
     partnerAsn:
