@@ -74,7 +74,7 @@ options:
     - A reference to the BackendService resource.
     - 'This field represents a link to a BackendService resource in GCP. It can be
       specified in two ways. First, you can place a dictionary with key ''selfLink''
-      and value of your resource''s selfLink Alternatively, you can add `register:
+      and value of your resource''s selfLink. Alternatively, you can add `register:
       name-of-resource` to a gcp_compute_backend_service task and then set this service
       field to "{{ name-of-resource }}"'
     required: true
@@ -93,7 +93,7 @@ options:
       configured.
     - 'This field represents a link to a SslPolicy resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_ssl_policy task and then set this ssl_policy field to "{{ name-of-resource
       }}"'
     required: false

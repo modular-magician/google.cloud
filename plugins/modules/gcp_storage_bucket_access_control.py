@@ -61,7 +61,7 @@ options:
     - The name of the bucket.
     - 'This field represents a link to a Bucket resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''name'' and value of
-      your resource''s name Alternatively, you can add `register: name-of-resource`
+      your resource''s name. Alternatively, you can add `register: name-of-resource`
       to a gcp_storage_bucket task and then set this bucket field to "{{ name-of-resource
       }}"'
     required: true

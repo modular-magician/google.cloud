@@ -64,7 +64,7 @@ options:
     - The name of the serviceAccount.
     - 'This field represents a link to a ServiceAccount resource in GCP. It can be
       specified in two ways. First, you can place a dictionary with key ''name'' and
-      value of your resource''s name Alternatively, you can add `register: name-of-resource`
+      value of your resource''s name. Alternatively, you can add `register: name-of-resource`
       to a gcp_iam_service_account task and then set this service_account field to
       "{{ name-of-resource }}"'
     required: false

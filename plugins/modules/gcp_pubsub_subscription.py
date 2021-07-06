@@ -58,7 +58,7 @@ options:
     - A reference to a Topic resource.
     - 'This field represents a link to a Topic resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''name'' and value of
-      your resource''s name Alternatively, you can add `register: name-of-resource`
+      your resource''s name. Alternatively, you can add `register: name-of-resource`
       to a gcp_pubsub_topic task and then set this topic field to "{{ name-of-resource
       }}"'
     required: true

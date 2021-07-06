@@ -237,7 +237,7 @@ options:
     - URL of the managed instance group that this autoscaler will scale.
     - 'This field represents a link to a InstanceGroupManager resource in GCP. It
       can be specified in two ways. First, you can place a dictionary with key ''selfLink''
-      and value of your resource''s selfLink Alternatively, you can add `register:
+      and value of your resource''s selfLink. Alternatively, you can add `register:
       name-of-resource` to a gcp_compute_instance_group_manager task and then set
       this target field to "{{ name-of-resource }}"'
     required: true

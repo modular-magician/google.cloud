@@ -59,7 +59,7 @@ options:
       defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set.
     - 'This field represents a link to a BackendService resource in GCP. It can be
       specified in two ways. First, you can place a dictionary with key ''selfLink''
-      and value of your resource''s selfLink Alternatively, you can add `register:
+      and value of your resource''s selfLink. Alternatively, you can add `register:
       name-of-resource` to a gcp_compute_backend_service task and then set this default_service
       field to "{{ name-of-resource }}"'
     required: false
@@ -203,7 +203,7 @@ options:
           - compute.backendServices.use .'
         - 'This field represents a link to a BackendService resource in GCP. It can
           be specified in two ways. First, you can place a dictionary with key ''selfLink''
-          and value of your resource''s selfLink Alternatively, you can add `register:
+          and value of your resource''s selfLink. Alternatively, you can add `register:
           name-of-resource` to a gcp_compute_backend_service task and then set this
           default_service field to "{{ name-of-resource }}"'
         required: false
@@ -317,7 +317,7 @@ options:
               set.
             - 'This field represents a link to a BackendService resource in GCP. It
               can be specified in two ways. First, you can place a dictionary with
-              key ''selfLink'' and value of your resource''s selfLink Alternatively,
+              key ''selfLink'' and value of your resource''s selfLink. Alternatively,
               you can add `register: name-of-resource` to a gcp_compute_backend_service
               task and then set this service field to "{{ name-of-resource }}"'
             required: false
@@ -489,7 +489,7 @@ options:
                     - 'This field represents a link to a BackendService resource in
                       GCP. It can be specified in two ways. First, you can place a
                       dictionary with key ''selfLink'' and value of your resource''s
-                      selfLink Alternatively, you can add `register: name-of-resource`
+                      selfLink. Alternatively, you can add `register: name-of-resource`
                       to a gcp_compute_backend_service task and then set this backend_service
                       field to "{{ name-of-resource }}"'
                     required: true
@@ -620,7 +620,7 @@ options:
                     - 'This field represents a link to a BackendService resource in
                       GCP. It can be specified in two ways. First, you can place a
                       dictionary with key ''selfLink'' and value of your resource''s
-                      selfLink Alternatively, you can add `register: name-of-resource`
+                      selfLink. Alternatively, you can add `register: name-of-resource`
                       to a gcp_compute_backend_service task and then set this backend_service
                       field to "{{ name-of-resource }}"'
                     required: true
@@ -823,7 +823,7 @@ options:
               set.
             - 'This field represents a link to a BackendService resource in GCP. It
               can be specified in two ways. First, you can place a dictionary with
-              key ''selfLink'' and value of your resource''s selfLink Alternatively,
+              key ''selfLink'' and value of your resource''s selfLink. Alternatively,
               you can add `register: name-of-resource` to a gcp_compute_backend_service
               task and then set this service field to "{{ name-of-resource }}"'
             required: false
@@ -1280,7 +1280,7 @@ options:
                     - 'This field represents a link to a BackendService resource in
                       GCP. It can be specified in two ways. First, you can place a
                       dictionary with key ''selfLink'' and value of your resource''s
-                      selfLink Alternatively, you can add `register: name-of-resource`
+                      selfLink. Alternatively, you can add `register: name-of-resource`
                       to a gcp_compute_backend_service task and then set this backend_service
                       field to "{{ name-of-resource }}"'
                     required: true
@@ -1414,7 +1414,7 @@ options:
                     - 'This field represents a link to a BackendService resource in
                       GCP. It can be specified in two ways. First, you can place a
                       dictionary with key ''selfLink'' and value of your resource''s
-                      selfLink Alternatively, you can add `register: name-of-resource`
+                      selfLink. Alternatively, you can add `register: name-of-resource`
                       to a gcp_compute_backend_service task and then set this backend_service
                       field to "{{ name-of-resource }}"'
                     required: true
@@ -1674,7 +1674,7 @@ options:
                   applies any relevant headerActions specified as part of this backendServiceWeight.
                 - 'This field represents a link to a BackendService resource in GCP.
                   It can be specified in two ways. First, you can place a dictionary
-                  with key ''selfLink'' and value of your resource''s selfLink Alternatively,
+                  with key ''selfLink'' and value of your resource''s selfLink. Alternatively,
                   you can add `register: name-of-resource` to a gcp_compute_backend_service
                   task and then set this backend_service field to "{{ name-of-resource
                   }}"'
@@ -1898,7 +1898,7 @@ options:
                   to.
                 - 'This field represents a link to a BackendService resource in GCP.
                   It can be specified in two ways. First, you can place a dictionary
-                  with key ''selfLink'' and value of your resource''s selfLink Alternatively,
+                  with key ''selfLink'' and value of your resource''s selfLink. Alternatively,
                   you can add `register: name-of-resource` to a gcp_compute_backend_service
                   task and then set this backend_service field to "{{ name-of-resource
                   }}"'
@@ -2068,7 +2068,7 @@ options:
         - Expected BackendService resource the given URL should be mapped to.
         - 'This field represents a link to a BackendService resource in GCP. It can
           be specified in two ways. First, you can place a dictionary with key ''selfLink''
-          and value of your resource''s selfLink Alternatively, you can add `register:
+          and value of your resource''s selfLink. Alternatively, you can add `register:
           name-of-resource` to a gcp_compute_backend_service task and then set this
           service field to "{{ name-of-resource }}"'
         required: true
@@ -2173,7 +2173,7 @@ options:
               relevant headerActions specified as part of this backendServiceWeight.
             - 'This field represents a link to a BackendService resource in GCP. It
               can be specified in two ways. First, you can place a dictionary with
-              key ''selfLink'' and value of your resource''s selfLink Alternatively,
+              key ''selfLink'' and value of your resource''s selfLink. Alternatively,
               you can add `register: name-of-resource` to a gcp_compute_backend_service
               task and then set this backend_service field to "{{ name-of-resource
               }}"'
@@ -2395,7 +2395,7 @@ options:
               to.
             - 'This field represents a link to a BackendService resource in GCP. It
               can be specified in two ways. First, you can place a dictionary with
-              key ''selfLink'' and value of your resource''s selfLink Alternatively,
+              key ''selfLink'' and value of your resource''s selfLink. Alternatively,
               you can add `register: name-of-resource` to a gcp_compute_backend_service
               task and then set this backend_service field to "{{ name-of-resource
               }}"'

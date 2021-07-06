@@ -218,7 +218,7 @@ options:
               the disk.
             - 'This field represents a link to a Disk resource in GCP. It can be specified
               in two ways. First, you can place a dictionary with key ''name'' and
-              value of your resource''s name Alternatively, you can add `register:
+              value of your resource''s name. Alternatively, you can add `register:
               name-of-resource` to a gcp_compute_disk task and then set this source
               field to "{{ name-of-resource }}"'
             required: false
@@ -307,7 +307,7 @@ options:
                   must live in the same region as the zone of the instance.
                 - 'This field represents a link to a Address resource in GCP. It can
                   be specified in two ways. First, you can place a dictionary with
-                  key ''address'' and value of your resource''s address Alternatively,
+                  key ''address'' and value of your resource''s address. Alternatively,
                   you can add `register: name-of-resource` to a gcp_compute_address
                   task and then set this nat_ip field to "{{ name-of-resource }}"'
                 required: false
@@ -374,7 +374,7 @@ options:
               but the subnetwork is specified, the network is inferred.
             - 'This field represents a link to a Network resource in GCP. It can be
               specified in two ways. First, you can place a dictionary with key ''selfLink''
-              and value of your resource''s selfLink Alternatively, you can add `register:
+              and value of your resource''s selfLink. Alternatively, you can add `register:
               name-of-resource` to a gcp_compute_network task and then set this network
               field to "{{ name-of-resource }}"'
             required: false
@@ -394,9 +394,9 @@ options:
               If the network is in custom subnet mode, then this field should be specified.
             - 'This field represents a link to a Subnetwork resource in GCP. It can
               be specified in two ways. First, you can place a dictionary with key
-              ''selfLink'' and value of your resource''s selfLink Alternatively, you
-              can add `register: name-of-resource` to a gcp_compute_subnetwork task
-              and then set this subnetwork field to "{{ name-of-resource }}"'
+              ''selfLink'' and value of your resource''s selfLink. Alternatively,
+              you can add `register: name-of-resource` to a gcp_compute_subnetwork
+              task and then set this subnetwork field to "{{ name-of-resource }}"'
             required: false
             type: dict
       scheduling:

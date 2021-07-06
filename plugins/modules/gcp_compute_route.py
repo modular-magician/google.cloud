@@ -89,7 +89,7 @@ options:
     - The network that this route applies to.
     - 'This field represents a link to a Network resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_network task and then set this network field to "{{ name-of-resource
       }}"'
     required: true
@@ -126,7 +126,7 @@ options:
       .'
     - 'This field represents a link to a Instance resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_instance task and then set this next_hop_instance field to
       "{{ name-of-resource }}"'
     required: false
@@ -141,7 +141,7 @@ options:
     - URL to a VpnTunnel that should handle matching packets.
     - 'This field represents a link to a VpnTunnel resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_vpn_tunnel task and then set this next_hop_vpn_tunnel field
       to "{{ name-of-resource }}"'
     required: false
@@ -156,7 +156,7 @@ options:
       when the destinationRange is a public (non-RFC 1918) IP CIDR range.'
     - 'This field represents a link to a ForwardingRule resource in GCP. It can be
       specified in two ways. First, you can place a dictionary with key ''selfLink''
-      and value of your resource''s selfLink Alternatively, you can add `register:
+      and value of your resource''s selfLink. Alternatively, you can add `register:
       name-of-resource` to a gcp_compute_forwarding_rule task and then set this next_hop_ilb
       field to "{{ name-of-resource }}"'
     required: false

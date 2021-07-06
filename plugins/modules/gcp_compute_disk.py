@@ -196,7 +196,7 @@ options:
       or full URL to the resource.
     - 'This field represents a link to a Snapshot resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_snapshot task and then set this source_snapshot field to "{{
       name-of-resource }}"'
     required: false

@@ -86,7 +86,7 @@ options:
     - A reference to the disk used to create this snapshot.
     - 'This field represents a link to a Disk resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''name'' and value of
-      your resource''s name Alternatively, you can add `register: name-of-resource`
+      your resource''s name. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_disk task and then set this source_disk field to "{{ name-of-resource
       }}"'
     required: true

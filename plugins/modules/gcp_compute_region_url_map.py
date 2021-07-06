@@ -59,7 +59,7 @@ options:
       defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set.
     - 'This field represents a link to a RegionBackendService resource in GCP. It
       can be specified in two ways. First, you can place a dictionary with key ''selfLink''
-      and value of your resource''s selfLink Alternatively, you can add `register:
+      and value of your resource''s selfLink. Alternatively, you can add `register:
       name-of-resource` to a gcp_compute_region_backend_service task and then set
       this default_service field to "{{ name-of-resource }}"'
     required: false
@@ -121,8 +121,8 @@ options:
           portion.
         - 'This field represents a link to a RegionBackendService resource in GCP.
           It can be specified in two ways. First, you can place a dictionary with
-          key ''selfLink'' and value of your resource''s selfLink Alternatively, you
-          can add `register: name-of-resource` to a gcp_compute_region_backend_service
+          key ''selfLink'' and value of your resource''s selfLink. Alternatively,
+          you can add `register: name-of-resource` to a gcp_compute_region_backend_service
           task and then set this default_service field to "{{ name-of-resource }}"'
         required: false
         type: dict
@@ -177,7 +177,7 @@ options:
               must be set.
             - 'This field represents a link to a RegionBackendService resource in
               GCP. It can be specified in two ways. First, you can place a dictionary
-              with key ''selfLink'' and value of your resource''s selfLink Alternatively,
+              with key ''selfLink'' and value of your resource''s selfLink. Alternatively,
               you can add `register: name-of-resource` to a gcp_compute_region_backend_service
               task and then set this service field to "{{ name-of-resource }}"'
             required: false
@@ -634,7 +634,7 @@ options:
                     - 'This field represents a link to a RegionBackendService resource
                       in GCP. It can be specified in two ways. First, you can place
                       a dictionary with key ''selfLink'' and value of your resource''s
-                      selfLink Alternatively, you can add `register: name-of-resource`
+                      selfLink. Alternatively, you can add `register: name-of-resource`
                       to a gcp_compute_region_backend_service task and then set this
                       backend_service field to "{{ name-of-resource }}"'
                     required: true
@@ -765,7 +765,7 @@ options:
                     - 'This field represents a link to a RegionBackendService resource
                       in GCP. It can be specified in two ways. First, you can place
                       a dictionary with key ''selfLink'' and value of your resource''s
-                      selfLink Alternatively, you can add `register: name-of-resource`
+                      selfLink. Alternatively, you can add `register: name-of-resource`
                       to a gcp_compute_region_backend_service task and then set this
                       backend_service field to "{{ name-of-resource }}"'
                     required: true
@@ -953,7 +953,7 @@ options:
               must be set.
             - 'This field represents a link to a RegionBackendService resource in
               GCP. It can be specified in two ways. First, you can place a dictionary
-              with key ''selfLink'' and value of your resource''s selfLink Alternatively,
+              with key ''selfLink'' and value of your resource''s selfLink. Alternatively,
               you can add `register: name-of-resource` to a gcp_compute_region_backend_service
               task and then set this service field to "{{ name-of-resource }}"'
             required: false
@@ -1125,7 +1125,7 @@ options:
                     - 'This field represents a link to a RegionBackendService resource
                       in GCP. It can be specified in two ways. First, you can place
                       a dictionary with key ''selfLink'' and value of your resource''s
-                      selfLink Alternatively, you can add `register: name-of-resource`
+                      selfLink. Alternatively, you can add `register: name-of-resource`
                       to a gcp_compute_region_backend_service task and then set this
                       backend_service field to "{{ name-of-resource }}"'
                     required: true
@@ -1256,7 +1256,7 @@ options:
                     - 'This field represents a link to a RegionBackendService resource
                       in GCP. It can be specified in two ways. First, you can place
                       a dictionary with key ''selfLink'' and value of your resource''s
-                      selfLink Alternatively, you can add `register: name-of-resource`
+                      selfLink. Alternatively, you can add `register: name-of-resource`
                       to a gcp_compute_region_backend_service task and then set this
                       backend_service field to "{{ name-of-resource }}"'
                     required: true
@@ -1514,8 +1514,8 @@ options:
           be mapped to.
         - 'This field represents a link to a RegionBackendService resource in GCP.
           It can be specified in two ways. First, you can place a dictionary with
-          key ''selfLink'' and value of your resource''s selfLink Alternatively, you
-          can add `register: name-of-resource` to a gcp_compute_region_backend_service
+          key ''selfLink'' and value of your resource''s selfLink. Alternatively,
+          you can add `register: name-of-resource` to a gcp_compute_region_backend_service
           task and then set this service field to "{{ name-of-resource }}"'
         required: true
         type: dict

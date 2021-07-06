@@ -144,7 +144,7 @@ options:
     - The model that this version belongs to.
     - 'This field represents a link to a Model resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''name'' and value of
-      your resource''s name Alternatively, you can add `register: name-of-resource`
+      your resource''s name. Alternatively, you can add `register: name-of-resource`
       to a gcp_mlengine_model task and then set this model field to "{{ name-of-resource
       }}"'
     required: true

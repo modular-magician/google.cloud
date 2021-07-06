@@ -90,7 +90,7 @@ options:
     - The network to which all instances in the instance group belong.
     - 'This field represents a link to a Network resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_network task and then set this network field to "{{ name-of-resource
       }}"'
     required: false
@@ -105,7 +105,7 @@ options:
     - The subnetwork to which all instances in the instance group belong.
     - 'This field represents a link to a Subnetwork resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_subnetwork task and then set this subnetwork field to "{{ name-of-resource
       }}"'
     required: false

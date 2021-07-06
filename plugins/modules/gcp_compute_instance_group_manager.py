@@ -73,7 +73,7 @@ options:
       group.
     - 'This field represents a link to a InstanceTemplate resource in GCP. It can
       be specified in two ways. First, you can place a dictionary with key ''selfLink''
-      and value of your resource''s selfLink Alternatively, you can add `register:
+      and value of your resource''s selfLink. Alternatively, you can add `register:
       name-of-resource` to a gcp_compute_instance_template task and then set this
       instance_template field to "{{ name-of-resource }}"'
     required: true

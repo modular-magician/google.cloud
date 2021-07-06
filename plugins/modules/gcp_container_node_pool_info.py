@@ -52,7 +52,7 @@ options:
     - The cluster this node pool belongs to.
     - 'This field represents a link to a Cluster resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''name'' and value of
-      your resource''s name Alternatively, you can add `register: name-of-resource`
+      your resource''s name. Alternatively, you can add `register: name-of-resource`
       to a gcp_container_cluster task and then set this cluster field to "{{ name-of-resource
       }}"'
     required: true

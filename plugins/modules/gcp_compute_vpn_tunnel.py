@@ -66,7 +66,7 @@ options:
     - URL of the Target VPN gateway with which this VPN tunnel is associated.
     - 'This field represents a link to a TargetVpnGateway resource in GCP. It can
       be specified in two ways. First, you can place a dictionary with key ''selfLink''
-      and value of your resource''s selfLink Alternatively, you can add `register:
+      and value of your resource''s selfLink. Alternatively, you can add `register:
       name-of-resource` to a gcp_compute_target_vpn_gateway task and then set this
       target_vpn_gateway field to "{{ name-of-resource }}"'
     required: false
@@ -77,7 +77,7 @@ options:
     - This must be used if a High Availability VPN gateway resource is created.
     - 'This field represents a link to a VpnGateway resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_vpn_gateway task and then set this vpn_gateway field to "{{
       name-of-resource }}"'
     required: false
@@ -92,7 +92,7 @@ options:
     - URL of the peer side external VPN gateway to which this VPN tunnel is connected.
     - 'This field represents a link to a ExternalVpnGateway resource in GCP. It can
       be specified in two ways. First, you can place a dictionary with key ''selfLink''
-      and value of your resource''s selfLink Alternatively, you can add `register:
+      and value of your resource''s selfLink. Alternatively, you can add `register:
       name-of-resource` to a gcp_compute_external_vpn_gateway task and then set this
       peer_external_gateway field to "{{ name-of-resource }}"'
     required: false
@@ -109,7 +109,7 @@ options:
       ID in the peer GCP VPN gateway.
     - 'This field represents a link to a VpnGateway resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_vpn_gateway task and then set this peer_gcp_gateway field to
       "{{ name-of-resource }}"'
     required: false
@@ -119,7 +119,7 @@ options:
     - URL of router resource to be used for dynamic routing.
     - 'This field represents a link to a Router resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_router task and then set this router field to "{{ name-of-resource
       }}"'
     required: false

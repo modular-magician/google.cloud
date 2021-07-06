@@ -194,7 +194,7 @@ options:
           this property. This field is only applicable for persistent disks.
         - 'This field represents a link to a Disk resource in GCP. It can be specified
           in two ways. First, you can place a dictionary with key ''selfLink'' and
-          value of your resource''s selfLink Alternatively, you can add `register:
+          value of your resource''s selfLink. Alternatively, you can add `register:
           name-of-resource` to a gcp_compute_disk task and then set this source field
           to "{{ name-of-resource }}"'
         required: false
@@ -298,7 +298,7 @@ options:
               in the same region as the zone of the instance.
             - 'This field represents a link to a Address resource in GCP. It can be
               specified in two ways. First, you can place a dictionary with key ''address''
-              and value of your resource''s address Alternatively, you can add `register:
+              and value of your resource''s address. Alternatively, you can add `register:
               name-of-resource` to a gcp_compute_address task and then set this nat_ip
               field to "{{ name-of-resource }}"'
             required: false
@@ -363,7 +363,7 @@ options:
           configured .
         - 'This field represents a link to a Network resource in GCP. It can be specified
           in two ways. First, you can place a dictionary with key ''selfLink'' and
-          value of your resource''s selfLink Alternatively, you can add `register:
+          value of your resource''s selfLink. Alternatively, you can add `register:
           name-of-resource` to a gcp_compute_network task and then set this network
           field to "{{ name-of-resource }}"'
         required: false
@@ -383,7 +383,7 @@ options:
           If the network is in custom subnet mode, then this field should be specified.
         - 'This field represents a link to a Subnetwork resource in GCP. It can be
           specified in two ways. First, you can place a dictionary with key ''selfLink''
-          and value of your resource''s selfLink Alternatively, you can add `register:
+          and value of your resource''s selfLink. Alternatively, you can add `register:
           name-of-resource` to a gcp_compute_subnetwork task and then set this subnetwork
           field to "{{ name-of-resource }}"'
         required: false

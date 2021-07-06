@@ -159,7 +159,7 @@ options:
       both to create an image.
     - 'This field represents a link to a Disk resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_disk task and then set this source_disk field to "{{ name-of-resource
       }}"'
     required: false
@@ -191,7 +191,7 @@ options:
       URL * This property * The rawDisk.source URL * The sourceDisk URL .'
     - 'This field represents a link to a Image resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_image task and then set this source_image field to "{{ name-of-resource
       }}"'
     required: false
@@ -204,7 +204,7 @@ options:
       The rawDisk.source URL * The sourceDisk URL .'
     - 'This field represents a link to a Snapshot resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_snapshot task and then set this source_snapshot field to "{{
       name-of-resource }}"'
     required: false

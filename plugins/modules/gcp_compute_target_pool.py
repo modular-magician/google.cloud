@@ -62,7 +62,7 @@ options:
       with the best effort, or to all instances when no instance is healthy.
     - 'This field represents a link to a TargetPool resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_target_pool task and then set this backup_pool field to "{{
       name-of-resource }}"'
     required: false
@@ -95,7 +95,7 @@ options:
       healthy at all times.
     - 'This field represents a link to a HttpHealthCheck resource in GCP. It can be
       specified in two ways. First, you can place a dictionary with key ''selfLink''
-      and value of your resource''s selfLink Alternatively, you can add `register:
+      and value of your resource''s selfLink. Alternatively, you can add `register:
       name-of-resource` to a gcp_compute_http_health_check task and then set this
       health_check field to "{{ name-of-resource }}"'
     required: false

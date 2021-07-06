@@ -86,7 +86,7 @@ options:
       configured.
     - 'This field represents a link to a SslPolicy resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_ssl_policy task and then set this ssl_policy field to "{{ name-of-resource
       }}"'
     required: false
@@ -97,7 +97,7 @@ options:
       BackendService.
     - 'This field represents a link to a UrlMap resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_url_map task and then set this url_map field to "{{ name-of-resource
       }}"'
     required: true

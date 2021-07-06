@@ -100,7 +100,7 @@ options:
       load balancing.
     - 'This field represents a link to a BackendService resource in GCP. It can be
       specified in two ways. First, you can place a dictionary with key ''selfLink''
-      and value of your resource''s selfLink Alternatively, you can add `register:
+      and value of your resource''s selfLink. Alternatively, you can add `register:
       name-of-resource` to a gcp_compute_backend_service task and then set this backend_service
       field to "{{ name-of-resource }}"'
     required: false
@@ -135,7 +135,7 @@ options:
     - This field is only used for INTERNAL load balancing.
     - 'This field represents a link to a Network resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_network task and then set this network field to "{{ name-of-resource
       }}"'
     required: false
@@ -173,7 +173,7 @@ options:
       if the network is in custom subnet mode, a subnetwork must be specified.
     - 'This field represents a link to a Subnetwork resource in GCP. It can be specified
       in two ways. First, you can place a dictionary with key ''selfLink'' and value
-      of your resource''s selfLink Alternatively, you can add `register: name-of-resource`
+      of your resource''s selfLink. Alternatively, you can add `register: name-of-resource`
       to a gcp_compute_subnetwork task and then set this subnetwork field to "{{ name-of-resource
       }}"'
     required: false
